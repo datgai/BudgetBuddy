@@ -1,6 +1,7 @@
 <script>
   import welcome from "$lib/images/svelte-welcome.webp";
   import welcome_fallback from "$lib/images/svelte-welcome.png";
+  import "./styles.css";
 </script>
 
 <svelte:head>
@@ -8,4 +9,4 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<div>test</div>
+<div class="h-screen">this is a test</div>
