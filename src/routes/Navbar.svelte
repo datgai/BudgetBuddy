@@ -4,14 +4,14 @@
 </script>
 
 <nav
-  class="fixed bottom-0 md:relative md:top-auto bg-[color:var(--color-theme-1)] text-white w-full h-50 md:flex md:justify-between md:items-center z-10"
+  class="fixed bottom-0 md:relative md:top-auto bg-[color:var(--color-theme-1)] backdrop-blur-lg text-white w-full h-50 md:flex md:justify-between md:items-center z-10"
 >
   <div class="px-4 py-5 flex justify-between invisible md:visible">
     <a href="#" class="text-white font-bold">Brand</a>
   </div>
 
   <div
-    class={`flex fixed md:flex md:items-center md:flex-row  md:pb-0 md:static bottom-0 w-full backdrop-blur-lg glowEffect md:filter-none`}
+    class={`flex fixed md:flex md:items-center md:flex-row  md:pb-0 md:static bottom-0 w-full  glowEffect md:filter-none`}
   >
     <a
       href="/"
@@ -59,7 +59,7 @@
       <p class="invisible md:visible">News</p></a
     >
     <a
-      href="forum"
+      href="forums"
       class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
