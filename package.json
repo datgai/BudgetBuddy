@@ -26,6 +26,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"chart.js": "^4.4.2"
+		"chart.js": "^4.4.2",
+		"remark-html": "^16.0.1"
 	}
 }
