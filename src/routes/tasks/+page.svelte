@@ -108,6 +108,6 @@
       taskMission="Check the news"
       isCompleted="Incomplete"
       experiencePoints="10"
-    ></TaskItem> test
+    ></TaskItem>
   </div>
 </div>
