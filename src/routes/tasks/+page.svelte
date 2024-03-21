@@ -61,17 +61,17 @@
   <div
     class="flex flex-col mx-2 my-2 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
   >
-    <TaskItem taskMission="Login" isCompleted="Completed" experiencePoints="10"
+    <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
     ></TaskItem>
     <TaskItem
       taskMission="Record a transaction"
-      isCompleted="Incomplete"
-      experiencePoints="10"
+      isCompleted={false}
+      experiencePoints={20}
     ></TaskItem>
     <TaskItem
       taskMission="Check the news"
-      isCompleted="Incomplete"
-      experiencePoints="10"
+      isCompleted={false}
+      experiencePoints={10}
     ></TaskItem>
   </div>
 
@@ -79,17 +79,17 @@
   <div
     class="flex flex-col mx-2 my-2 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
   >
-    <TaskItem taskMission="Login" isCompleted="Completed" experiencePoints="10"
+    <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
     ></TaskItem>
     <TaskItem
       taskMission="Record a transaction"
-      isCompleted="Incomplete"
-      experiencePoints="10"
+      isCompleted={false}
+      experiencePoints={20}
     ></TaskItem>
     <TaskItem
       taskMission="Check the news"
-      isCompleted="Incomplete"
-      experiencePoints="10"
+      isCompleted={false}
+      experiencePoints={10}
     ></TaskItem>
   </div>
 
@@ -97,17 +97,17 @@
   <div
     class="flex flex-col mx-2 my-2 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
   >
-    <TaskItem taskMission="Login" isCompleted="Completed" experiencePoints="10"
+    <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
     ></TaskItem>
     <TaskItem
       taskMission="Record a transaction"
-      isCompleted="Incomplete"
-      experiencePoints="10"
+      isCompleted={false}
+      experiencePoints={20}
     ></TaskItem>
     <TaskItem
       taskMission="Check the news"
-      isCompleted="Incomplete"
-      experiencePoints="10"
+      isCompleted={false}
+      experiencePoints={10}
     ></TaskItem>
   </div>
 </div>
