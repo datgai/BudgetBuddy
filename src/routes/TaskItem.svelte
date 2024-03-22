@@ -4,7 +4,7 @@
   export let experiencePoints: number;
 </script>
 
-<div class="flex bg-transparent backdrop-blur-lg rounded-full w-full px-2 py-2">
+<div class="flex bg-transparent backdrop-blur-lg rounded-full w-full px-7 py-2 my-2">
   <div class="flex-1 w-[60%] flex-row my-auto">
     <p class="font-bold text-lg text-[var(--color-text)] truncate">
       {taskMission}

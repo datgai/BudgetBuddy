@@ -8,7 +8,7 @@
 </script>
 
 <div
-  class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-2xl w-full px-2 py-2"
+  class="flex bg-[color:var(--color-theme-3)] backdrop-blur-lg rounded-2xl w-full px-2 py-2"
 >
   <div class="@apply flex gap-x-[15px] pb-2.5 rounded-[30px]">
     <img class="w-[120px] rounded-[15px]" src={itemThumbnail} alt="" />

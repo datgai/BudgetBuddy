@@ -86,7 +86,7 @@
 
 <div class="w-full bg-gray-100 flex flex-col justify-between h-screen">
   <div class="bg-[#060047] justify-start items-center pl-[15px] flex">
-    <img src={leftarrow} alt="" class="w-[35px] h-[35px] bg-center" />
+    <a href="forums"><img src={leftarrow} alt="" class="w-[35px] h-[35px] bg-center" /></a>
     <h2 class="text-2xl font-bold text-white p-4">Tips For Budgeting</h2>
   </div>
   <div class="flex-grow overflow-auto p-4 space-y-4 mb-36">

@@ -5,16 +5,17 @@
 </script>
 
 <svelte:head>
-  <title>Tasks</title>
+  <title>Forums</title>
   <meta name="description" content="About this app" />
 </svelte:head>
 
-<div class="container my-24 md:px-6 p-5">
+<div class="container md:px-6 p-5">
   <header class="flex">
     <div class="flex-1">Brand</div>
     <Profile />
   </header>
-
+</div>
+<div class="container mb-24 md:px-6 px-5">
   <h2 class="mb-8 text-3xl font-bold">Tasks</h2>
   <div
     class="flex flex-col mx-2 my-2 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
@@ -57,9 +58,9 @@
     </div>
   </div>
 
-  <h2 class="mb-8 text-2xl font-bold">Daily</h2>
+  <h2 class="mb-2 mt-5 text-2xl font-bold">Daily</h2>
   <div
-    class="flex flex-col mx-2 my-2 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
+    class="flex flex-col mx-2 my-2 px-2 py-2 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
   >
     <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
     ></TaskItem>
@@ -75,9 +76,9 @@
     ></TaskItem>
   </div>
 
-  <h2 class="mb-8 text-2xl font-bold">Weekly</h2>
+  <h2 class="mb-2 mt-5 text-2xl font-bold">Weekly</h2>
   <div
-    class="flex flex-col mx-2 my-2 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
+    class="flex flex-col mx-2 my-2 px-2 py-2 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
   >
     <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
     ></TaskItem>
@@ -93,9 +94,9 @@
     ></TaskItem>
   </div>
 
-  <h2 class="mb-8 text-2xl font-bold">Monthly</h2>
+  <h2 class="mb-2 mt-5 text-2xl font-bold">Monthly</h2>
   <div
-    class="flex flex-col mx-2 my-2 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
+    class="flex flex-col mx-2 my-2 px-2 py-2 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
   >
     <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
     ></TaskItem>

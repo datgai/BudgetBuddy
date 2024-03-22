@@ -1,12 +1,27 @@
 <script>
   import NewsItem from "../NewsItem.svelte";
+  import Profile from "../Profile.svelte";
+
 </script>
 
+<svelte:head>
+  <title>Forums</title>
+  <meta name="description" content="About this app" />
+</svelte:head>
+
+<div class="container md:px-6 p-5">
+  <header class="flex">
+    <div class="flex-1">Brand</div>
+    <Profile />
+  </header>
+</div>
+
 <!-- Container for demo purpose -->
-<div class="container my-24 md:px-6 p-5">
+<body>
+  <div class="container px-5 pb-20">
   <!-- Section: Design Block -->
   <section class="mb-15 md:text-left">
-    <h2 class="mb-12 text-3xl font-bold">News</h2>
+    <h2 class="mb-5 text-3xl font-bold">News</h2>
 
     <div class="relative mb-6">
       <div class="mb-6 ml-auto w-full shrink-0 grow-0 basis-auto">
@@ -33,7 +48,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <section class="mb-[10vh]">
     <div class="info">
       <div class="flex justify-between text-base">
         <div class="font-semibold">Latest</div>
@@ -58,9 +73,40 @@
         authorTitle="BBC"
         authoredAgo="10 min ago"
       ></NewsItem>
+      <NewsItem
+        itemThumbnail="https://www.investopedia.com/thmb/W2u8B017D-GDqZxH-ddc8BLS8qo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/top_6_apps_for_financial_news-5bfc3459c9e77c0026b6a2bf.jpg"
+        itemCountry="Malaysia"
+        itemTitle="Bank Negara committed to ensure Malaysia's financial system remains
+        resilient"
+        authorThumbnail="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/BBC_News_logo.svg/2560px-BBC_News_logo.svg.png"
+        authorTitle="BBC"
+        authoredAgo="10 min ago"
+    ></NewsItem>
+      <NewsItem
+        itemThumbnail="https://www.investopedia.com/thmb/W2u8B017D-GDqZxH-ddc8BLS8qo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/top_6_apps_for_financial_news-5bfc3459c9e77c0026b6a2bf.jpg"
+        itemCountry="Malaysia"
+        itemTitle="Bank Negara committed to ensure Malaysia's financial system remains
+        resilient"
+        authorThumbnail="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/BBC_News_logo.svg/2560px-BBC_News_logo.svg.png"
+        authorTitle="BBC"
+        authoredAgo="10 min ago"
+    ></NewsItem>
+      <NewsItem
+        itemThumbnail="https://www.investopedia.com/thmb/W2u8B017D-GDqZxH-ddc8BLS8qo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/top_6_apps_for_financial_news-5bfc3459c9e77c0026b6a2bf.jpg"
+        itemCountry="Malaysia"
+        itemTitle="Bank Negara committed to ensure Malaysia's financial system remains
+        resilient"
+        authorThumbnail="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/BBC_News_logo.svg/2560px-BBC_News_logo.svg.png"
+        authorTitle="BBC"
+        authoredAgo="10 min ago"
+    ></NewsItem>
+    
     </div>
   </section>
 </div>
+
+</body>
+
 
 <style>
 </style>

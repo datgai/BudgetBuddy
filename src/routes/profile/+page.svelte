@@ -25,7 +25,7 @@
   </div>
 </header>
 
-<body>
+<body class="px-5 py-10">
   <div
     class="flex flex-col mx-2 my-4 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
   >
@@ -89,13 +89,21 @@
 
   <div class="mx-2 my-4 px-2 py-6">
     <ul class="text-2xl">
-      <li>Notifications</li>
-      <li>Security</li>
-      <li>Support</li>
-      <li>About</li>
-      <li>FAQ</li>
-      <li>Rate Us</li>
-      <li>Sign Out</li>
+      <li class="p-3">Notifications</li>
+      <li class="p-3">Security</li>
+      <li class="p-3">Support</li>
+      <li class="p-3">About</li>
+      <li class="p-3">FAQ</li>
+      <li class="p-3">Rate Us</li>
+      <li class="p-3">Sign Out</li>
     </ul>
   </div>
 </body>
+
+<style>
+  li:hover{
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+  }
+</style>

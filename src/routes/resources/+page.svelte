@@ -1,9 +1,22 @@
 <script>
   import ResourceItem from "../ResourcesItem.svelte";
+  import Profile from "../Profile.svelte";
 </script>
 
-<div class="container my-24 md:px-6 p-5">
-  <h2 class="mb-12 text-3xl font-bold">Resources</h2>
+<svelte:head>
+  <title>Forums</title>
+  <meta name="description" content="About this app" />
+</svelte:head>
+
+<div class="container md:px-6 p-5">
+  <header class="flex">
+    <div class="flex-1">Brand</div>
+    <Profile />
+  </header>
+</div>
+
+<div class="container mb-24 md:px-6 px-5">
+  <h2 class="mb-6 text-3xl font-bold">Resources</h2>
   <div class="@apply h-[50px] flex flex-col gap-y-5 mt-5">
     <!-- Section: Design Block -->
     <!-- Comment -->
