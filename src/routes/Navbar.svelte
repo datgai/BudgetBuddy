@@ -5,6 +5,7 @@
 
 <nav
   class="py-1 flex fixed bottom-[-2px] md:relative md:top-auto bg-[#000F1F] bg-opacity-50 text-white w-full h-50 md:flex md:justify-between md:items-center z-10"
+
 >
   <div class="px-4 py-5 flex justify-between invisible md:visible">
     <a href="#" class="text-white font-bold">Brand</a>
@@ -12,6 +13,7 @@
 
   <div
     class={`flex fixed md:flex items-center md:flex-row  md:pb-0 md:static bottom-0 w-full md:filter-none`}
+
   >
     <a
       href="/"
@@ -59,7 +61,7 @@
       <p class="invisible md:visible">News</p></a
     >
     <a
-      href="forum"
+      href="forums"
       class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
       <svg
