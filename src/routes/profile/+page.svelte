@@ -1,5 +1,6 @@
 <script>
   import "../styles.css";
+  import ProfileOption from '../ProfileOption.svelte';
   import person_picture from "$lib/images/Person.png";
 </script>
 
@@ -27,14 +28,14 @@
 
 <body class="px-5 py-10">
   <div
-    class="flex flex-col mx-2 my-4 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
+    class="flex flex-col mx-2 my-4 px-2 py-6 bg-[color:var(--color-theme-1)] shadow-[rgba(0,0,0,0.25)_0px_14px_28px,rgba(0,0,0,0.22)_0px_10px_10px] rounded-[30px]"
   >
     <div class="mx-auto">
       <!-- svelte-ignore a11y-missing-attribute -->
       <img
         height="250"
         width="250"
-        class="rounded-full border-2 border-indigo-500"
+        class="rounded-full border-4 border-[color:var(--color-theme-3)]"
         src={person_picture}
       />
     </div>
@@ -56,10 +57,10 @@
         Level 12
       </p>
       <div
-        class="w-full bg-gray-200 rounded-full h-4 mb-4 dark:bg-white border border-indigo-500"
+        class="w-full bg-gray-200 rounded-full h-4 mb-4 dark:bg-white border border-indigo-500 shadow-[0_3px_10px_rgb(0,0,0,0.6)]"
       >
         <div
-          class="bg-blue-600 h-4 rounded-full dark:bg-blue-500"
+          class="bg-blue-600 h-4 rounded-full dark:bg-blue-500 shadow-[0_3px_10px_rgb(0,0,0,0.6)]"
           style="width: 45%"
         ></div>
       </div>
@@ -89,21 +90,13 @@
 
   <div class="mx-2 my-4 px-2 py-6">
     <ul class="text-2xl">
-      <li class="p-3">Notifications</li>
-      <li class="p-3">Security</li>
-      <li class="p-3">Support</li>
-      <li class="p-3">About</li>
-      <li class="p-3">FAQ</li>
-      <li class="p-3">Rate Us</li>
-      <li class="p-3">Sign Out</li>
+      <ProfileOption option="Notifications" />
+      <ProfileOption option="Security" />
+      <ProfileOption option="Support" />
+      <ProfileOption option="About" />
+      <ProfileOption option="FAQ" />
+      <ProfileOption option="Rate Us" />
+      <ProfileOption option="Sign Out" />
     </ul>
   </div>
 </body>
-
-<style>
-  li:hover{
-    background-color: white;
-    color: black;
-    border-radius: 20px;
-  }
-</style>

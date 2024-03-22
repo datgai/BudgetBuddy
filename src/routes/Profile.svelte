@@ -3,7 +3,7 @@
 </script>
 
 <a
-  class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-full w-[35vw] mx-2 px-2 py-2"
+  class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-full w-[35vw] mx-2 px-2 py-2 shadow-[rgba(0,0,0,0.35)_0px_5px_15px]"
   href="profile"
 >
   <div class="flex-2 w-[50%] flex-row mx-2 my-auto">
@@ -14,7 +14,7 @@
     <img
       height="40"
       width="40"
-      class="rounded-full border-2 border-indigo-500"
+      class="rounded-full border-[6px] border-[--color-bg-0]"
       src={person_picture}
     />
   </div>

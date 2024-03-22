@@ -5,14 +5,15 @@
   export let itemDescription: String;
 </script>
 
-<div class="flex flex-col my-2">
+<div class="flex flex-col my-5">
   {#if itemThumbnail}
     <img src={itemThumbnail} alt="car!" class="rounded-t-2xl" />
   {/if}
   <div
-    class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg {itemThumbnail
+    class="flex bg-gradient-to-r from-blue-800 to-indigo-900 backdrop-blur-lg {itemThumbnail
       ? 'rounded-b-2xl'
-      : 'rounded-2xl'} w-full px-2 py-2"
+      : 'rounded-2xl'} w-full px-2 py-2
+      shadow-[rgba(0,0,0,0.25)_0px_14px_28px,rgba(0,0,0,0.22)_0px_10px_10px]"
   >
     <div class="flex flex-row w-full p-2">
       <div class="flex-1">

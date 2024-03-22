@@ -9,7 +9,7 @@
     export let comments;
   </script>
   
-  <div class="@apply flex gap-x-[15px] rounded-[12px] bg-[#283747] p-5 shadow-[rgba(0,0,0,0.35)_0px_5px_15px]">
+  <div class="@apply flex gap-x-[15px] rounded-[12px] bg-[--color-theme-2] p-5 shadow-[rgba(0,0,0,0.45)_0px_5px_15px] bg-gradient-to-r from-blue-800 to-indigo-900">
     <img class="w-[80px] h-[80px] rounded-[15px]" src={imageSrc} alt="" />
     <div>
       <div class="mb-3">{description}</div>

@@ -20,7 +20,7 @@
   <div class="flex flex-col max-w-xl">
     <p class="text-xs text-black {user ? '' : 'text-right'}">{userName}</p>
     <div
-      class="{user ? 'bg-gray-300' : 'bg-blue-600 text-white'} p-3 rounded-lg"
+      class="{user ? 'bg-gray-300' : 'bg-[--color-theme-1] text-white'} p-3 rounded-lg"
     >
       <p class="text-sm {user ? 'text-black' : ''}">{text}</p>
     </div>

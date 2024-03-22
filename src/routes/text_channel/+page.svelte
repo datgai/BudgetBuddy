@@ -6,7 +6,7 @@
   interface Resource {
     text: string;
     user: boolean;
-    userName: string; 
+    userName: string;
     time: string;
     profile: string;
   }
@@ -85,8 +85,10 @@
 </script>
 
 <div class="w-full bg-gray-100 flex flex-col justify-between h-screen">
-  <div class="bg-[#060047] justify-start items-center pl-[15px] flex">
-    <a href="forums"><img src={leftarrow} alt="" class="w-[35px] h-[35px] bg-center" /></a>
+  <div class="bg-[--color-bg-0] justify-start items-center pl-[15px] flex">
+    <a href="forums"
+      ><img src={leftarrow} alt="" class="w-[35px] h-[35px] bg-center" /></a
+    >
     <h2 class="text-2xl font-bold text-white p-4">Tips For Budgeting</h2>
   </div>
   <div class="flex-grow overflow-auto p-4 space-y-4 mb-36">
@@ -98,13 +100,13 @@
     class="fixed bottom-16 flex justify-between items-start p-4 bg-white w-full bg-[#bdbebf] rounded-[5px]"
   >
     <input
-      class="flex items-center h-[100%] w-[80%] rounded p-3 text-sm shadow-inner text-[black] rounded-[20px]"
+      class="flex items-center h-[100%] w-[80%] rounded p-3 text-sm shadow-inner text-[black] rounded-[20px] border-2"
       type="text"
       placeholder="Type your message…"
     />
     <button
       type="submit"
-      class="h-[45px] w-[45px] bg-blue-600 p-2.5 rounded-[50%]"
+      class="h-[45px] w-[45px] bg-[--color-theme-1] p-2.5 rounded-[50%]"
       ><img src={send} alt="" class="bg-center" /></button
     >
   </div>

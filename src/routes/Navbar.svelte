@@ -4,7 +4,7 @@
 </script>
 
 <nav
-  class="py-1 flex fixed bottom-[-2px] md:relative md:top-auto bg-[#000F1F] text-white w-full h-50 md:flex md:justify-between md:items-center z-10"
+  class="py-1 flex fixed bottom-[-2px] md:relative rounded-t-lg md:top-auto bg-[--color-theme-2] text-white w-full h-50 md:flex md:justify-between md:items-center z-10"
 
 >
   <div class="px-4 py-5 flex justify-between invisible md:visible">

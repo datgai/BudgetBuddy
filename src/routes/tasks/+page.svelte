@@ -18,7 +18,7 @@
 <div class="container mb-24 md:px-6 px-5">
   <h2 class="mb-8 text-3xl font-bold">Tasks</h2>
   <div
-    class="flex flex-col mx-2 my-2 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
+    class="flex flex-col mx-2 my-2 px-2 py-6 bg-gradient-to-b from-cyan-700 to-sky-900 backdrop-blur-lg rounded-[30px] shadow-[6px_9px_6px_0px_rgba(0,0,0,0.63)]"
   >
     <div class="my-4 mx-auto w-80">
       <p
@@ -27,10 +27,10 @@
         Level 12
       </p>
       <div
-        class="w-full bg-gray-200 rounded-full h-4 mb-4 dark:bg-white border border-indigo-500"
+        class="w-full bg-gray-200 rounded-full h-4 mb-4 dark:bg-white border border-indigo-500 shadow-[0_3px_10px_rgb(0,0,0,0.6)]"
       >
         <div
-          class="bg-blue-600 h-4 rounded-full dark:bg-blue-500"
+          class="bg-blue-600 h-4 rounded-full dark:bg-blue-500 shadow-[0_3px_10px_rgb(0,0,0,0.6)]"
           style="width: 45%"
         ></div>
       </div>
@@ -46,7 +46,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-6 h-6 mx-2"
+          class="w-6 h-6 mx-2 "
         >
           <path
             stroke-linecap="round"
@@ -60,55 +60,55 @@
 
   <h2 class="mb-2 mt-5 text-2xl font-bold">Daily</h2>
   <div
-    class="flex flex-col mx-2 my-2 px-2 py-2 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
+    class="flex flex-col mx-2 my-2 px-6 py-2 bg-gradient-to-b from-cyan-700 to-sky-900 backdrop-blur-lg rounded-[30px] shadow-[rgba(0,0,0,0.25)_0px_14px_28px,rgba(0,0,0,0.22)_0px_10px_10px]"
   >
     <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
     ></TaskItem>
     <TaskItem
       taskMission="Record a transaction"
       isCompleted={false}
-      experiencePoints={20}
+      experiencePoints={10}
     ></TaskItem>
     <TaskItem
       taskMission="Check the news"
-      isCompleted={false}
+      isCompleted={true}
       experiencePoints={10}
     ></TaskItem>
   </div>
 
   <h2 class="mb-2 mt-5 text-2xl font-bold">Weekly</h2>
   <div
-    class="flex flex-col mx-2 my-2 px-2 py-2 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
+    class="flex flex-col mx-2 my-2 px-6 py-2 bg-gradient-to-b from-cyan-700 to-sky-900 backdrop-blur-lg rounded-[30px] shadow-[rgba(0,0,0,0.25)_0px_14px_28px,rgba(0,0,0,0.22)_0px_10px_10px]"
   >
-    <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
+    <TaskItem taskMission="7-day login streak" isCompleted={true} experiencePoints={20}
     ></TaskItem>
     <TaskItem
-      taskMission="Record a transaction"
+      taskMission="Record 10 transactions"
       isCompleted={false}
-      experiencePoints={20}
+      experiencePoints={30}
     ></TaskItem>
     <TaskItem
-      taskMission="Check the news"
+      taskMission="Save 10% of income"
       isCompleted={false}
-      experiencePoints={10}
+      experiencePoints={30}
     ></TaskItem>
   </div>
 
   <h2 class="mb-2 mt-5 text-2xl font-bold">Monthly</h2>
   <div
-    class="flex flex-col mx-2 my-2 px-2 py-2 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
+    class="flex flex-col mx-2 my-2 px-6 py-2 bg-gradient-to-b from-cyan-700 to-sky-900 backdrop-blur-lg rounded-[30px] shadow-[rgba(0,0,0,0.25)_0px_14px_28px,rgba(0,0,0,0.22)_0px_10px_10px]"
   >
-    <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
+    <TaskItem taskMission="30-day login streak" isCompleted={true} experiencePoints={40}
     ></TaskItem>
     <TaskItem
-      taskMission="Record a transaction"
+      taskMission="Record 40 transactions"
       isCompleted={false}
-      experiencePoints={20}
+      experiencePoints={40}
     ></TaskItem>
     <TaskItem
-      taskMission="Check the news"
+      taskMission="Save 20% of income"
       isCompleted={false}
-      experiencePoints={10}
+      experiencePoints={50}
     ></TaskItem>
   </div>
 </div>
