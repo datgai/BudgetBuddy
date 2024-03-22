@@ -1,14 +1,14 @@
 <script lang="ts">
-  export let itemThumbnail: String;
-  export let itemCountry: String;
-  export let itemTitle: String;
-  export let authorThumbnail: String;
-  export let authorTitle: String;
-  export let authoredAgo: String;
+  export let itemThumbnail: string;
+  export let itemCountry: string;
+  export let itemTitle: string;
+  export let authorThumbnail: string;
+  export let authorTitle: string;
+  export let authoredAgo: string;
 </script>
 
 <div
-  class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-2xl w-full px-2 py-2"
+  class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[var(--card-border-radius)] w-full px-[var(--x-padding-cards)] py-[var(--y-padding-cards)] my-[var(--y-margin-cards)]"
 >
   <div class="@apply flex gap-x-[15px] pb-2.5 rounded-[30px]">
     <img class="w-[120px] rounded-[15px]" src={itemThumbnail} alt="" />
