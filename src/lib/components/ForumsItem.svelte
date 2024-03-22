@@ -1,18 +1,22 @@
 <script lang="ts">
   import person_picture from "$lib/images/Person.png";
-  export let itemThumbnail: String;
-  export let itemTitle: String;
-  export let itemDescription: String;
+  export let itemThumbnail: string | undefined = undefined;
+  export let itemTitle: string;
+  export let itemDescription: string;
 </script>
 
-<div class="flex flex-col my-2">
+<div class="flex flex-col my-[var(--y-margin-cards)]">
   {#if itemThumbnail}
-    <img src={itemThumbnail} alt="car!" class="rounded-t-2xl" />
+    <img
+      src={itemThumbnail}
+      alt="car!"
+      class="rounded-t-[var(--card-border-radius)]"
+    />
   {/if}
   <div
     class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg {itemThumbnail
-      ? 'rounded-b-2xl'
-      : 'rounded-2xl'} w-full px-2 py-2"
+      ? 'rounded-b-[var(--card-border-radius)]'
+      : 'rounded-[var(--card-border-radius)]'} w-full px-[var(--x-padding-cards)] py-[var(--y-padding-cards)]"
   >
     <div class="flex flex-row w-full p-2">
       <div class="flex-1">

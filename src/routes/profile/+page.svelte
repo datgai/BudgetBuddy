@@ -1,10 +1,13 @@
 <script>
-  import "../styles.css";
   import person_picture from "$lib/images/Person.png";
 </script>
 
+<svelte:head>
+  <title>Profile</title>
+</svelte:head>
+
 <header>
-  <div class="flex p-4">
+  <div>
     <a href="/" class="">
       <svg
         xmlns="http://www.w3.org/2000/svg"

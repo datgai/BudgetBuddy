@@ -3,14 +3,14 @@
 </script>
 
 <a
-  class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-full w-[55vw] mx-4 px-2 py-2"
+  class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-full w-[55vw] py-1"
   href="profile"
 >
-  <div class="flex-2 w-[60%] flex-row mx-2 my-auto">
+  <div class="flex-1 w-[60%] flex-row mx-2 px-2 my-auto">
     <p class="font-bold text-lg text-[var(--color-text)] truncate">Adam Bob</p>
     <p class="truncate text-[var(--color-text-inactive)]">View Profile</p>
   </div>
-  <div class="flex-1 mx-1">
+  <div class="mx-2 justify-end">
     <img
       height="60"
       width="60"
