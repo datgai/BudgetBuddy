@@ -4,18 +4,18 @@
 </script>
 
 <nav
-  class="fixed bottom-0 md:relative md:top-auto bg-[color:var(--color-theme-1)] text-white w-full h-50 md:flex md:justify-between md:items-center z-10"
+  class="py-1 flex fixed bottom-[-2px] md:relative md:top-auto bg-[#000F1F] bg-opacity-50 text-white w-full h-50 md:flex md:justify-between md:items-center z-10"
 >
   <div class="px-4 py-5 flex justify-between invisible md:visible">
     <a href="#" class="text-white font-bold">Brand</a>
   </div>
 
   <div
-    class={`flex fixed md:flex md:items-center md:flex-row  md:pb-0 md:static bottom-0 w-full backdrop-blur-lg glowEffect md:filter-none`}
+    class={`flex fixed md:flex items-center md:flex-row  md:pb-0 md:static bottom-0 w-full md:filter-none`}
   >
     <a
       href="/"
-      class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[var(--color-text-inactive)] block text-center"
+      class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-8 h-8 md:hidden m-auto {$page.url.pathname == '/'
+        class="w-6 h-6 md:hidden m-auto {$page.url.pathname == '/'
           ? 'glowEffect'
           : ''}"
       >
@@ -46,7 +46,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-8 h-8 md:hidden m-auto {$page.url.pathname == '/news'
+        class="w-6 h-6 md:hidden m-auto {$page.url.pathname == '/news'
           ? 'glowEffect'
           : ''}"
       >
@@ -61,13 +61,34 @@
     <a
       href="forum"
       class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
+    >
+      <svg
+        class="opacity-75 w-6 h-6 md:hidden m-auto {$page.url.pathname ==
+        '/forum'
+          ? 'glowEffect'
+          : ''}"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M3.559 4.544c.355-.35.834-.544 1.33-.544H19.11c.496 0 .975.194 1.33.544.356.35.559.829.559 1.331v9.25c0 .502-.203.981-.559 1.331-.355.35-.834.544-1.33.544H15.5l-2.7 3.6a1 1 0 0 1-1.6 0L8.5 17H4.889c-.496 0-.975-.194-1.33-.544A1.868 1.868 0 0 1 3 15.125v-9.25c0-.502.203-.981.559-1.331ZM7.556 7.5a1 1 0 1 0 0 2h8a1 1 0 0 0 0-2h-8Zm0 3.5a1 1 0 1 0 0 2H12a1 1 0 1 0 0-2H7.556Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+
+      <p class="invisible md:visible">Forum</p></a
+    >
+    <a
+      href="resources"
+      class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-8 h-8 md:hidden m-auto {$page.url.pathname == '/forums'
+        class="w-6 h-6 md:hidden m-auto {$page.url.pathname == '/resources'
           ? 'glowEffect'
           : ''}"
       >
@@ -77,7 +98,7 @@
           d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z"
         />
       </svg>
-      <p class="invisible md:visible">Forum</p></a
+      <p class="invisible md:visible">Resources</p></a
     >
     <a
       href="tasks"
@@ -89,7 +110,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-8 h-8 md:hidden m-auto {$page.url.pathname == '/tasks'
+        class="w-6 h-6 md:hidden m-auto {$page.url.pathname == '/tasks'
           ? 'glowEffect'
           : ''}"
       >
