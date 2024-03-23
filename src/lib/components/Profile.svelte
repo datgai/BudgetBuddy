@@ -3,11 +3,11 @@
 </script>
 
 <a
-  class="flex cardGradientBackgroundSecond shadowEffect rounded-full w-[55vw] py-1"
+  class="flex cardGradientBackgroundSecond shadowEffect rounded-full w-[180px] py-1"
   href="profile"
 >
-  <div class="flex-2 w-[50%] flex-row mx-2 my-auto">
-    <p class="font-bold text-xs text-[var(--color-text)] truncate">Adam Bob</p>
+  <div class="flex-1 w-[50%] flex-row mx-2 my-auto">
+    <p class="font-bold text-sm text-[var(--color-text)] truncate">Adam Bob</p>
     <p class="truncate text-xs text-[var(--color-text-inactive)]">
       View Profile
     </p>

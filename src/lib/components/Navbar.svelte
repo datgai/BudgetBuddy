@@ -1,5 +1,6 @@
 <script>
   import { page } from "$app/stores";
+  import Profile from "./Profile.svelte";
 </script>
 
 <nav
@@ -121,5 +122,8 @@
       </svg>
       <p class="invisible md:visible">Tasks</p></a
     >
+  </div>
+  <div class="invisible md:visible mx-4">
+    <Profile />
   </div>
 </nav>
