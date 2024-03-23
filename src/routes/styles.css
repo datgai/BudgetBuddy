@@ -14,7 +14,7 @@
 	--card-border-radius: 12px;
 	--y-margin-cards: 4px;
 	--x-padding-cards: 6px;
-	--y-padding-cards: 4px;
+	--y-padding-cards: 8px;
 	font-family: var(--font-body);
 	color: var(--color-text);
 }
