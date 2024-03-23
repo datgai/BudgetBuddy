@@ -4,6 +4,7 @@
   import TransactionHistory from "$lib/components/TransactionHistory.svelte";
   import expenses_graph from "$lib/images/expenses.png";
   import amazon_icon from "$lib/images/amazon.jpg";
+  import BalanceGraph from "$lib/components/BalanceGraph.svelte";
 </script>
 
 <svelte:head>
@@ -16,11 +17,11 @@
     <div>
       <h2 class="my-2 text-3xl font-bold">Transactions</h2>
     </div>
-
-    <Overview
-      graphSrc={expenses_graph}
-      message="Your spending decreased from 5% the last week. Good job!"
-    />
+    <div
+      class="flex flex-1 flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
+    >
+      <BalanceGraph />
+    </div>
 
     <div class="p-4">
       <h3 class="text-lg">History</h3>

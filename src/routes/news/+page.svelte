@@ -1,6 +1,18 @@
 <script>
+  // @ts-nocheck
+
   import MobileHeader from "$lib/components/MobileHeader.svelte";
   import NewsItem from "$lib/components/NewsItem.svelte";
+  const images = [
+    {
+      path: "https://images.pexels.com/photos/1490908/pexels-photo-1490908.jpeg?cs=srgb&dl=pexels-svetozar-milashevich-1490908.jpg&fm=jpg",
+      id: "image1",
+    },
+    {
+      path: "https://images.pexels.com/photos/1490908/pexels-photo-1490908.jpeg?cs=srgb&dl=pexels-svetozar-milashevich-1490908.jpg&fm=jpg",
+      id: "image2",
+    },
+  ];
 </script>
 
 <svelte:head>
@@ -15,7 +27,7 @@
 
   <section class="mb-15 md:text-left">
     <div
-      class="flex flex-col mb-6 p-2 overflow-hidden min-h-[70vh] rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20 bg-[url(https://mdbcdn.b-cdn.net/img/new/standard/city/018.jpg)]"
+      class="flex flex-col mb-6 p-2 overflow-hidden min-h-[40vh] rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20 bg-[url(https://mdbcdn.b-cdn.net/img/new/standard/city/018.jpg)]"
       data-te-ripple-init
     >
       <div
@@ -95,5 +107,3 @@ resilient"
     </div>
   </section>
 </div>
-
-
