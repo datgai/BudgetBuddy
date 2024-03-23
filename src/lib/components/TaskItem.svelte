@@ -13,5 +13,5 @@
       {isCompleted ? "Completed" : "Incomplete"}
     </p>
   </div>
-  <div class="flex m-auto"><h3>{experiencePoints} XP</h3></div>
+  <div class="flex text-lg m-auto font-bold	{isCompleted ? "text-green-600" : "text-red-600"}"><h3>{experiencePoints} XP</h3></div>
 </div>

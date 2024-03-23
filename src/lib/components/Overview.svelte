@@ -11,10 +11,10 @@
     <img
       src={graphSrc}
       alt=""
-      class="shadow-[rgba(0,0,0,0.16)_0px_1px_4px,rgb(51,51,51)_0px_0px_0px_3px] rounded-[20px]"
+      class="shadowEffect rounded-[20px]"
     />
     <p
-      class="absolute text-[13px] w-[200px] text-center bg-[purple] shadow-[rgba(60,64,67,0.3)_0px_1px_2px_0px,rgba(60,64,67,0.15)_0px_1px_3px_1px] -translate-x-2/4 p-[7px] rounded-[var(--card-border-radius)] left-[55%] top-[70%] ; text-wrap: wrap"
+      class="absolute text-[13px] w-[200px] text-center bg-gradient-to-b from-purple-700 to-fuchsia-700 opacity-80 shadowEffect -translate-x-2/4 p-[7px] rounded-[var(--card-border-radius)] left-[55%] top-[70%] ; text-wrap: wrap"
     >
       {message}
     </p>

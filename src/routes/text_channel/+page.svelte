@@ -98,7 +98,7 @@
     class="fixed bottom-16 flex justify-between items-start p-4 bg-white w-full bg-[#bdbebf] rounded-[5px]"
   >
     <input
-      class="flex items-center h-[100%] w-[80%] rounded p-3 text-sm shadow-inner text-[black] rounded-[20px]"
+      class="border-2	flex items-center h-[100%] w-[80%] rounded p-3 text-sm shadow-inner text-[black] rounded-[20px]"
       type="text"
       placeholder="Type your message…"
     />

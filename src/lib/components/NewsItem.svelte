@@ -10,7 +10,7 @@
 <div
   class="rounded-[var(--card-border-radius)] my-[var(--y-margin-cards)] shadowEffect"
 >
-  <div class="flex flex-col sm:flex-row my-[var(--y-margin-cards)]">
+  <div class="flex flex-col sm:flex-row">
     {#if itemThumbnail}
       <img
         src={itemThumbnail}
