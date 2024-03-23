@@ -6,7 +6,7 @@
 
 <div class="app bg-[var(--color-bg-0)]">
   <Navbar />
-  <main class="container md:px-6 p-4">
+  <main class="md:px-6 p-4">
     <slot />
   </main>
 

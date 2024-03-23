@@ -8,16 +8,29 @@
 </script>
 
 <div
-  class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[var(--card-border-radius)] w-full px-[var(--x-padding-cards)] py-[var(--y-padding-cards)] my-[var(--y-margin-cards)]"
+  class="backdrop-blur-lg rounded-[var(--card-border-radius)] px-[var(--x-padding-cards)] py-[var(--y-padding-cards)] my-[var(--y-margin-cards)]"
 >
-  <div class="@apply flex gap-x-[15px] pb-2.5 rounded-[30px]">
-    <img class="w-[120px] rounded-[15px]" src={itemThumbnail} alt="" />
-    <div class="detail">
-      <div class="h-4/5">
+  <div class="flex flex-col sm:flex-row my-[var(--y-margin-cards)]">
+    {#if itemThumbnail}
+      <img
+        src={itemThumbnail}
+        alt="article Thumbnail"
+        class="object-cover rounded-t-[var(--card-border-radius)] max-h-[200px] sm:rounded-tr-none sm:rounded-l-[var(--card-border-radius)]"
+      />
+    {/if}
+
+    <div
+      class="flex flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg {itemThumbnail
+        ? 'rounded-b-[var(--card-border-radius)] sm:rounded-bl-none sm:rounded-r-[var(--card-border-radius)] '
+        : 'rounded-[var(--card-border-radius)]'} w-full px-[var(--x-padding-cards)] py-[var(--y-padding-cards)]"
+    >
+      <div
+        class="flex-1 px-[var(--x-padding-cards)] py-[var(--y-padding-cards)] w-full"
+      >
         <div class="text-[gray] text-[15px]">{itemCountry}</div>
-        <div class="title">
+        <h1 class="flex-1 text-xl max-h-[90px] overflow-hidden">
           {itemTitle}
-        </div>
+        </h1>
       </div>
       <div class="flex items-center justify-between mt-0.5">
         <div class="flex items-center gap-x-2.5">

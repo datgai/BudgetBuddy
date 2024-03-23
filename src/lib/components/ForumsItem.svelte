@@ -5,22 +5,28 @@
   export let itemDescription: string;
 </script>
 
-<div class="flex flex-col my-[var(--y-margin-cards)]">
+<div
+  class="flex flex-col sm:flex-row px-[var(--x-padding-cards)] py-[var(--y-padding-cards)] my-[var(--y-margin-cards)]"
+>
   {#if itemThumbnail}
     <img
       src={itemThumbnail}
-      alt="car!"
-      class="rounded-t-[var(--card-border-radius)]"
+      alt="article Thumbnail"
+      class="object-cover rounded-t-[var(--card-border-radius)] max-h-[200px] sm:rounded-tr-none md:rounded-l-[var(--card-border-radius)]"
     />
   {/if}
   <div
     class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg {itemThumbnail
-      ? 'rounded-b-[var(--card-border-radius)]'
+      ? 'rounded-b-[var(--card-border-radius)] sm:rounded-bl-none sm:rounded-r-[var(--card-border-radius)] '
       : 'rounded-[var(--card-border-radius)]'} w-full px-[var(--x-padding-cards)] py-[var(--y-padding-cards)]"
   >
-    <div class="flex flex-row w-full p-2">
+    <div
+      class="flex flex-row w-full px-[var(--x-padding-cards)] py-[var(--y-padding-cards)]"
+    >
       <div class="flex-1">
-        <h1 class="font-bold text-xl">{itemTitle}</h1>
+        <h1 class="font-bold text-xl max-h-[90px] overflow-hidden">
+          {itemTitle}
+        </h1>
         <h2>{itemDescription}</h2>
         <div class="flex -space-x-4 rtl:space-x-reverse">
           <img
