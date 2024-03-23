@@ -1,10 +1,10 @@
 <script lang="ts">
   export let text: string;
   export let user: boolean;
-  export let userName: string; 
+  export let userName: string;
   export let time: string;
   export let profile: string;
-  import personProfile from "../lib/images/Person.png";
+  import personProfile from "$lib/images/Person.png";
 </script>
 
 <div

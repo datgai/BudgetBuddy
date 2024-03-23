@@ -14,7 +14,7 @@
   </div>
 
   <div
-    class="flex flex-col mx-2 my-2 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
+    class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
   >
     <div class="my-4 mx-auto w-80">
       <p
@@ -56,7 +56,7 @@
 
   <h2 class="text-2xl font-bold">Daily</h2>
   <div
-    class="flex flex-col mx-2 my-2 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
+    class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
   >
     <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
     ></TaskItem>
@@ -74,7 +74,7 @@
 
   <h2 class="text-2xl font-bold">Weekly</h2>
   <div
-    class="flex flex-col mx-2 my-2 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
+    class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
   >
     <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
     ></TaskItem>
@@ -92,7 +92,7 @@
 
   <h2 class="text-2xl font-bold">Monthly</h2>
   <div
-    class="flex flex-col mx-2 my-2 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
+    class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
   >
     <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
     ></TaskItem>

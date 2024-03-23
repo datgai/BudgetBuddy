@@ -1,12 +1,12 @@
 <script lang="ts">
-  import MessageItem from "../MessageItem.svelte";
+  import MessageItem from "$lib/components/MessageItem.svelte";
   import leftarrow from "$lib/images/arrow.png";
   import send from "$lib/images/send.png";
 
   interface Resource {
     text: string;
     user: boolean;
-    userName: string; 
+    userName: string;
     time: string;
     profile: string;
   }

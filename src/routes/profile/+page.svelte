@@ -30,10 +30,9 @@
 
 <body>
   <div
-    class="flex flex-col mx-2 my-4 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
+    class="flex flex-col mx-2 my-4 px-2 py-6 cardGradientBackgroundSecond rounded-[var(--card-border-radius)]"
   >
     <div class="mx-auto">
-      <!-- svelte-ignore a11y-missing-attribute -->
       <img
         height="250"
         width="250"
