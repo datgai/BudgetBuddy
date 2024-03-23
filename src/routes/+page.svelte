@@ -13,63 +13,65 @@
     <h2 class="my-2 text-3xl font-bold">Dashboard</h2>
   </div>
 
-  <div
-    class="flex flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-3"
-  >
-    <h2 class="mb-8 text-2xl font-bold">Available Balance</h2>
-    <h1 class="text-3xl font-bold">MYR 50,000.00</h1>
-    <div class="flex flex-row mx-2">
-      <a href="transactions" class="flex-1 my-auto">See details</a>
-      <a href="/"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          class="w-14 h-14"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-11.25a.75.75 0 0 0-1.5 0v2.5h-2.5a.75.75 0 0 0 0 1.5h2.5v2.5a.75.75 0 0 0 1.5 0v-2.5h2.5a.75.75 0 0 0 0-1.5h-2.5v-2.5Z"
-            clip-rule="evenodd"
-          />
-        </svg>
-      </a>
-    </div>
-  </div>
-
-  <div class="flex flex-row">
+  <div class="mb-8">
     <div
-      class="flex flex-1 flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
+      class="flex flex-col cardGradientBackground shadowEffect border-b-4 border-blue-700 rounded-[var(--card-border-radius)] px-6 py-2 my-3"
     >
-      <h2 class="mb-8 text-xl font-bold">MYR 1,800.00</h2>
-      <h1 class="font-bold">Income</h1>
+      <h2 class="mb-8 text-2xl font-bold">Available Balance</h2>
+      <h1 class="text-3xl font-bold">MYR 50,000.00</h1>
+      <div class="flex flex-row mx-2">
+        <a href="transactions" class="flex-1 my-auto">See details</a>
+        <a href="/"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="w-14 h-14"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-11.25a.75.75 0 0 0-1.5 0v2.5h-2.5a.75.75 0 0 0 0 1.5h2.5v2.5a.75.75 0 0 0 1.5 0v-2.5h2.5a.75.75 0 0 0 0-1.5h-2.5v-2.5Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="flex flex-row">
+      <div
+        class="flex flex-1 flex-col cardGradientBackground shadowEffect border-b-4 border-blue-700 rounded-[var(--card-border-radius)] px-6 py-2 mx-1"
+      >
+        <h2 class="mb-8 text-xl font-bold">MYR 1,800.00</h2>
+        <h1 class="font-bold">Income</h1>
+      </div>
+
+      <div
+        class="flex flex-1 flex-col cardGradientBackground shadowEffect border-b-4 border-blue-700 rounded-[var(--card-border-radius)] px-6 py-2 mx-1"
+      >
+        <h2 class="mb-8 text-xl font-bold">MYR 1,800.00</h2>
+        <h1 class="font-bold">Expenses</h1>
+      </div>
     </div>
 
     <div
-      class="flex flex-1 flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
+      class="flex flex-1 flex-col cardGradientBackground shadowEffect border-b-4 border-blue-700 rounded-[var(--card-border-radius)] px-6 py-2 my-2"
     >
-      <h2 class="mb-8 text-xl font-bold">MYR 1,800.00</h2>
-      <h1 class="font-bold">Expenses</h1>
+      <h2 class="mb-8 text-xl font-bold">Investments</h2>
+      <h1 class="font-bold">MYR 1,800.00</h1>
+    </div>
+
+    <div
+      class="flex flex-1 flex-col cardGradientBackground shadowEffect border-b-4 border-blue-700 rounded-[var(--card-border-radius)] px-6 py-2 my-2"
+    >
+      <h2 class="mb-8 text-xl font-bold">Subscriptions</h2>
+      <h1 class="font-bold">MYR 1,800.00</h1>
     </div>
   </div>
 
+  <h2 class="my-2 text-3xl font-bold">Dashboard</h2>
   <div
-    class="flex flex-1 flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2"
-  >
-    <h2 class="mb-8 text-xl font-bold">Investments</h2>
-    <h1 class="font-bold">MYR 1,800.00</h1>
-  </div>
-
-  <div
-    class="flex flex-1 flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2"
-  >
-    <h2 class="mb-8 text-xl font-bold">Subscriptions</h2>
-    <h1 class="font-bold">MYR 1,800.00</h1>
-  </div>
-
-  <h2 class="mb-8 text-3xl font-bold">Categories</h2>
-  <div
-    class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-2xl w-full px-2 py-2"
+    class="flex flex-1 flex-col cardGradientBackground shadowEffect border-b-4 border-blue-700 rounded-[var(--card-border-radius)] px-6 py-2 my-2"
   >
     <div class="flex">
       <svg
@@ -86,7 +88,6 @@
         <div class="flex-1">
           <h1 class="font-bold text-xl">Shopping</h1>
           <h2>MYR 15.000.00</h2>
-          <div class="flex items-center justify-between mt-0.5"></div>
         </div>
       </div>
     </div>

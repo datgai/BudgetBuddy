@@ -3,7 +3,7 @@
 </script>
 
 <a
-  class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-full w-[35vw] mx-2 px-2 py-2"
+  class="flex cardGradientBackgroundSecond shadowEffect rounded-full w-[55vw] py-1"
   href="profile"
 >
   <div class="flex-2 w-[50%] flex-row mx-2 my-auto">
