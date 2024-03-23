@@ -6,7 +6,7 @@
   class="py-1 flex fixed bottom-[-2px] md:relative md:top-0 bg-[#000F1F] text-white w-full h-50 md:flex md:justify-between md:items-center z-10 rounded-t-xl md:rounded-xl md:rounded-t-none"
 >
   <div class="px-4 py-5 flex justify-between invisible md:visible">
-    <a href="/" class="text-white font-bold">Brand</a>
+    <a href="/" class="text-white font-bold invisible">Brand</a>
   </div>
 
   <div
