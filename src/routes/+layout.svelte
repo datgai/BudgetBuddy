@@ -4,7 +4,7 @@
   import "../app.css";
 </script>
 
-<div class="app bg-[var(--color-bg-0)]">
+<div class="app">
   <Navbar />
   <main class="md:px-6 p-4">
     <slot />

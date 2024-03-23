@@ -8,7 +8,7 @@
 </script>
 
 <div
-  class="backdrop-blur-lg rounded-[var(--card-border-radius)] px-[var(--x-padding-cards)] py-[var(--y-padding-cards)] my-[var(--y-margin-cards)]"
+  class="rounded-[var(--card-border-radius)] my-[var(--y-margin-cards)] shadowEffect"
 >
   <div class="flex flex-col sm:flex-row my-[var(--y-margin-cards)]">
     {#if itemThumbnail}
@@ -20,7 +20,7 @@
     {/if}
 
     <div
-      class="flex flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg {itemThumbnail
+      class="flex flex-col cardGradientBackground {itemThumbnail
         ? 'rounded-b-[var(--card-border-radius)] sm:rounded-bl-none sm:rounded-r-[var(--card-border-radius)] '
         : 'rounded-[var(--card-border-radius)]'} w-full px-[var(--x-padding-cards)] py-[var(--y-padding-cards)]"
     >

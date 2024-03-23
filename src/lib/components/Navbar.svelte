@@ -3,7 +3,7 @@
 </script>
 
 <nav
-  class="py-1 flex fixed bottom-[-2px] md:relative md:top-auto bg-[#000F1F] bg-opacity-50 text-white w-full h-50 md:flex md:justify-between md:items-center z-10"
+  class="py-1 flex fixed bottom-[-2px] md:relative md:top-auto bg-[#000F1F] text-white w-full h-50 md:flex md:justify-between md:items-center z-10"
 >
   <div class="px-4 py-5 flex justify-between invisible md:visible">
     <a href="/" class="text-white font-bold">Brand</a>
@@ -63,7 +63,7 @@
     >
       <svg
         class="opacity-75 w-6 h-6 md:hidden m-auto {$page.url.pathname ==
-        '/forum'
+        '/forums'
           ? 'glowEffect'
           : ''}"
         xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@
         />
       </svg>
 
-      <p class="invisible md:visible">Forum</p></a
+      <p class="invisible md:visible">Forums</p></a
     >
     <a
       href="resources"
