@@ -1,6 +1,5 @@
 <script>
-  import "./styles.css";
-  import Profile from "./Profile.svelte";
+  import MobileHeader from "$lib/components/MobileHeader.svelte";
 </script>
 
 <svelte:head>
@@ -8,21 +7,19 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<div class="md:px-6 p-5">
-  <header class="flex">
-    <div class="flex-1">Brand</div>
-    <Profile />
-  </header>
-</div>
-<body class="px-5 pb-10">
-  <h2 class="mb-8 text-3xl font-bold">Dashboard</h2>
+<div>
+  <MobileHeader />
+  <div>
+    <h2 class="my-2 text-3xl font-bold">Dashboard</h2>
+  </div>
+
   <div
     class="flex flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-3"
   >
     <h2 class="mb-8 text-2xl font-bold">Available Balance</h2>
     <h1 class="text-3xl font-bold">MYR 50,000.00</h1>
     <div class="flex flex-row mx-2">
-      <a href="transaction" class="flex-1 my-auto">See details</a>
+      <a href="transactions" class="flex-1 my-auto">See details</a>
       <a href="/"
         ><svg
           xmlns="http://www.w3.org/2000/svg"

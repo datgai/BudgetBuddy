@@ -12,9 +12,10 @@
 	--color-theme-3: #00082E;
 	--color-text: rgb(255, 255, 255);
 	--color-text-inactive: rgba(194, 192, 192, 0.9);
-	--column-width: 42rem;
-	--column-margin-top: 4rem;
-	--glow-effect: 0_35px_60px_-15px_var(--color-text);
+	--card-border-radius: 12px;
+	--y-margin-cards: 4px;
+	--x-padding-cards: 6px;
+	--y-padding-cards: 4px;
 	font-family: var(--font-body);
 	color: var(--color-text);
 }

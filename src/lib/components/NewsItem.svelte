@@ -1,10 +1,10 @@
 <script lang="ts">
-  export let itemThumbnail: String;
-  export let itemCountry: String;
-  export let itemTitle: String;
-  export let authorThumbnail: String;
-  export let authorTitle: String;
-  export let authoredAgo: String;
+  export let itemThumbnail: string;
+  export let itemCountry: string;
+  export let itemTitle: string;
+  export let authorThumbnail: string;
+  export let authorTitle: string;
+  export let authoredAgo: string;
 </script>
 
 <div

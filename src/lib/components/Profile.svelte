@@ -8,9 +8,11 @@
 >
   <div class="flex-2 w-[50%] flex-row mx-2 my-auto">
     <p class="font-bold text-xs text-[var(--color-text)] truncate">Adam Bob</p>
-    <p class="truncate text-xs text-[var(--color-text-inactive)]">View Profile</p>
+    <p class="truncate text-xs text-[var(--color-text-inactive)]">
+      View Profile
+    </p>
   </div>
-  <div class="flex-1 mx-1">
+  <div class="mx-2 justify-end">
     <img
       height="40"
       width="40"

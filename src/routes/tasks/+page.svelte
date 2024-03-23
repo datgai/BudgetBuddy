@@ -1,22 +1,18 @@
 <script>
-  import "../styles.css";
-  import Profile from "../Profile.svelte";
-  import TaskItem from "../TaskItem.svelte";
+  import MobileHeader from "$lib/components/MobileHeader.svelte";
+  import TaskItem from "$lib/components/TaskItem.svelte";
 </script>
 
 <svelte:head>
-  <title>Forums</title>
-  <meta name="description" content="About this app" />
+  <title>Tasks</title>
 </svelte:head>
 
-<div class="container md:px-6 p-5">
-  <header class="flex">
-    <div class="flex-1">Brand</div>
-    <Profile />
-  </header>
-</div>
-<div class="container mb-24 md:px-6 px-5">
-  <h2 class="mb-8 text-3xl font-bold">Tasks</h2>
+<div>
+  <MobileHeader />
+  <div>
+    <h2 class="my-2 text-3xl font-bold">Tasks</h2>
+  </div>
+
   <div
     class="flex flex-col mx-2 my-2 px-2 py-6 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
   >
@@ -58,7 +54,7 @@
     </div>
   </div>
 
-  <h2 class="mb-2 mt-5 text-2xl font-bold">Daily</h2>
+  <h2 class="text-2xl font-bold">Daily</h2>
   <div
     class="flex flex-col mx-2 my-2 px-2 py-2 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
   >
@@ -76,7 +72,7 @@
     ></TaskItem>
   </div>
 
-  <h2 class="mb-2 mt-5 text-2xl font-bold">Weekly</h2>
+  <h2 class="text-2xl font-bold">Weekly</h2>
   <div
     class="flex flex-col mx-2 my-2 px-2 py-2 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
   >
@@ -94,7 +90,7 @@
     ></TaskItem>
   </div>
 
-  <h2 class="mb-2 mt-5 text-2xl font-bold">Monthly</h2>
+  <h2 class="text-2xl font-bold">Monthly</h2>
   <div
     class="flex flex-col mx-2 my-2 px-2 py-2 bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-[30px]"
   >

@@ -1,23 +1,18 @@
 <script>
-  import "../styles.css";
-  import Profile from "../Profile.svelte";
-  import ForumsItem from "../ForumsItem.svelte";
+  import MobileHeader from "$lib/components/MobileHeader.svelte";
+  import ForumsItem from "$lib/components/ForumsItem.svelte";
 </script>
 
 <svelte:head>
   <title>Forums</title>
-  <meta name="description" content="About this app" />
 </svelte:head>
 
-<div class="container md:px-6 p-5">
-  <header class="flex">
-    <div class="flex-1">Brand</div>
-    <Profile />
-  </header>
-</div>
+<div>
+  <MobileHeader />
+  <div>
+    <h2 class="my-2 text-3xl font-bold">Forums</h2>
+  </div>
 
-<div class="container px-5 pb-20">
-  <h2 class="mb-5 text-3xl font-bold">Forums</h2>
   <div>
     <a href="text_channel">
       <ForumsItem
