@@ -86,7 +86,7 @@
 
 <div class="w-full bg-gray-100 flex flex-col justify-between h-screen">
   <div class="bg-[#060047] justify-start items-center pl-[15px] flex">
-    <img src={leftarrow} alt="" class="w-[35px] h-[35px] bg-center" />
+    <a href="forums"><img src={leftarrow} alt="" class="w-[35px] h-[35px] bg-center" /></a>
     <h2 class="text-2xl font-bold text-white p-4">Tips For Budgeting</h2>
   </div>
   <div class="flex-grow overflow-auto p-4 space-y-4 mb-36">
@@ -98,7 +98,7 @@
     class="fixed bottom-16 flex justify-between items-start p-4 bg-white w-full bg-[#bdbebf] rounded-[5px]"
   >
     <input
-      class="flex items-center h-[100%] w-[80%] rounded p-3 text-sm shadow-inner text-[black] rounded-[20px]"
+      class="border-2	flex items-center h-[100%] w-[80%] rounded p-3 text-sm shadow-inner text-[black] rounded-[20px]"
       type="text"
       placeholder="Type your message…"
     />

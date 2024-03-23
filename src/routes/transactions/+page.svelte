@@ -29,7 +29,7 @@
         icon={amazon_icon}
         title="Amazon"
         date="May 24, 2022"
-        amount="- RM103.56"
+        amount="- RM10.56"
       />
       <TransactionHistory
         icon={amazon_icon}

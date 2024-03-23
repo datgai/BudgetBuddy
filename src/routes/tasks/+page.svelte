@@ -14,7 +14,7 @@
   </div>
 
   <div
-    class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
+    class="flex flex-col mx-2 my-4 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
   >
     <div class="my-4 mx-auto w-80">
       <p
@@ -23,10 +23,10 @@
         Level 12
       </p>
       <div
-        class="w-full bg-gray-200 rounded-full h-4 mb-4 dark:bg-white border border-indigo-500"
+        class="w-full bg-gray-200 rounded-full h-4 mb-4 dark:bg-white border border-indigo-500 shadowEffect"
       >
         <div
-          class="bg-blue-600 h-4 rounded-full dark:bg-blue-500"
+          class="bg-blue-600 h-4 rounded-full dark:bg-blue-500 shadowEffect"
           style="width: 45%"
         ></div>
       </div>
@@ -42,7 +42,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-6 h-6 mx-2"
+          class="w-6 h-6 mx-2 "
         >
           <path
             stroke-linecap="round"
@@ -53,58 +53,65 @@
       </div>
     </div>
   </div>
+  <div class="flex flex-col gap-y-4">
+    <div>
+      <h2 class="text-2xl font-bold">Daily</h2>
+      <div
+        class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
+      >
+        <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
+        ></TaskItem>
+        <TaskItem
+          taskMission="Record a transaction"
+          isCompleted={false}
+          experiencePoints={20}
+        ></TaskItem>
+        <TaskItem
+          taskMission="Check the news"
+          isCompleted={false}
+          experiencePoints={10}
+        ></TaskItem>
+      </div>
+    </div>
 
-  <h2 class="text-2xl font-bold">Daily</h2>
-  <div
-    class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
-  >
-    <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
-    ></TaskItem>
-    <TaskItem
-      taskMission="Record a transaction"
-      isCompleted={false}
-      experiencePoints={20}
-    ></TaskItem>
-    <TaskItem
-      taskMission="Check the news"
-      isCompleted={false}
-      experiencePoints={10}
-    ></TaskItem>
-  </div>
+    <div>
+      <h2 class="text-2xl font-bold">Weekly</h2>
+      <div
+        class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
+      >
+        <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
+        ></TaskItem>
+        <TaskItem
+          taskMission="Record a transaction"
+          isCompleted={false}
+          experiencePoints={20}
+        ></TaskItem>
+        <TaskItem
+          taskMission="Check the news"
+          isCompleted={false}
+          experiencePoints={10}
+        ></TaskItem>
+      </div>
+    </div>
 
-  <h2 class="text-2xl font-bold">Weekly</h2>
-  <div
-    class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
-  >
-    <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
-    ></TaskItem>
-    <TaskItem
-      taskMission="Record a transaction"
-      isCompleted={false}
-      experiencePoints={20}
-    ></TaskItem>
-    <TaskItem
-      taskMission="Check the news"
-      isCompleted={false}
-      experiencePoints={10}
-    ></TaskItem>
-  </div>
-
-  <h2 class="text-2xl font-bold">Monthly</h2>
-  <div
-    class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
-  >
-    <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
-    ></TaskItem>
-    <TaskItem
-      taskMission="Record a transaction"
-      isCompleted={false}
-      experiencePoints={20}
-    ></TaskItem>
-    <TaskItem
-      taskMission="Check the news"
-      isCompleted={false}
-      experiencePoints={10}
-    ></TaskItem>
+    <div>
+      <h2 class="text-2xl font-bold">Monthly</h2>
+      <div
+        class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
+      >
+        <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
+        ></TaskItem>
+        <TaskItem
+          taskMission="Record a transaction"
+          isCompleted={false}
+          experiencePoints={20}
+        ></TaskItem>
+        <TaskItem
+          taskMission="Check the news"
+          isCompleted={false}
+          experiencePoints={10}
+        ></TaskItem>
+      </div>
+    </div>
   </div>
 </div>

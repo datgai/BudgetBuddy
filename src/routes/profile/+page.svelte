@@ -28,15 +28,15 @@
   </div>
 </header>
 
-<body>
+<body class="px-5 py-10">
   <div
-    class="flex flex-col mx-2 my-4 px-2 py-6 cardGradientBackgroundSecond rounded-[var(--card-border-radius)]"
+    class="shadowEffect flex flex-col mx-2 my-4 px-2 py-6 cardGradientBackgroundSecond rounded-[var(--card-border-radius)]"
   >
     <div class="mx-auto">
       <img
         height="250"
         width="250"
-        class="rounded-full border-2 border-indigo-500"
+        class="rounded-full border-4 border-indigo-500"
         src={person_picture}
       />
     </div>
@@ -58,10 +58,10 @@
         Level 12
       </p>
       <div
-        class="w-full bg-gray-200 rounded-full h-4 mb-4 dark:bg-white border border-indigo-500"
+        class="shadowEffect w-full bg-gray-200 rounded-full h-4 mb-4 dark:bg-white border border-indigo-500"
       >
         <div
-          class="bg-blue-600 h-4 rounded-full dark:bg-blue-500"
+          class="bg-blue-600 h-4 rounded-full dark:bg-blue-500 shadowEffect"
           style="width: 45%"
         ></div>
       </div>
@@ -91,13 +91,22 @@
 
   <div class="mx-2 my-4 px-2 py-6">
     <ul class="text-2xl">
-      <li>Notifications</li>
-      <li>Security</li>
-      <li>Support</li>
-      <li>About</li>
-      <li>FAQ</li>
-      <li>Rate Us</li>
-      <li>Sign Out</li>
+      <li class="p-3">Notifications</li>
+      <li class="p-3">Security</li>
+      <li class="p-3">Support</li>
+      <li class="p-3">About</li>
+      <li class="p-3">FAQ</li>
+      <li class="p-3">Rate Us</li>
+      <li class="p-3">Sign Out</li>
     </ul>
   </div>
 </body>
+
+<style>
+  li:hover{
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+</style>

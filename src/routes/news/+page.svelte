@@ -30,7 +30,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <section class="mb-[10vh]">
     <div class="info">
       <div class="flex justify-between text-base">
         <div class="font-semibold">Latest</div>
@@ -47,7 +47,7 @@
       </ul>
     </div>
 
-    <div>
+    <div class="flex flex-col">
       <NewsItem
         itemThumbnail="https://www.investopedia.com/thmb/W2u8B017D-GDqZxH-ddc8BLS8qo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/top_6_apps_for_financial_news-5bfc3459c9e77c0026b6a2bf.jpg"
         itemCountry="Malaysia"
@@ -96,5 +96,4 @@ resilient"
   </section>
 </div>
 
-<style>
-</style>
+
