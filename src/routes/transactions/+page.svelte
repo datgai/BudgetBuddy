@@ -18,7 +18,7 @@
       <h2 class="my-2 text-3xl font-bold">Transactions</h2>
     </div>
     <div
-      class="flex flex-1 flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
+      class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
     >
       <BalanceGraph />
     </div>
