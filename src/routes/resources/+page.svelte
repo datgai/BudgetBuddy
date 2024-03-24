@@ -15,28 +15,25 @@
 
   <div class="flex flex-col gap-y-4">
     <ResourceItem
-      itemThumbnail="https://www.investopedia.com/thmb/W2u8B017D-GDqZxH-ddc8BLS8qo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/top_6_apps_for_financial_news-5bfc3459c9e77c0026b6a2bf.jpg"
-      itemTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean odio eros, feugiat nec aliquet ac, cursus ac ligula. Vivamus a luctus ligula. Aliquam vulputate vestibulum lobortis. Cras a dapibus nulla. Sed pellentesque luctus dolor, ut faucibus odio placerat nec. Fusce feugiat tempor eleifend. Fusce efficitur eu nisi consequat lacinia. ."
+      itemThumbnail="https://media.licdn.com/dms/image/D5612AQHNW3EKA-Fdyg/article-cover_image-shrink_720_1280/0/1682684162015?e=2147483647&v=beta&t=bR7zJ3dYWhkgs7DGotLo1HPAdzKUJOFVzmvYeLgW83A"
+      itemTitle="Mastering Money: A Comprehensive Guide to Financial Literacy"
       itemTags={[
-        "#crypto",
-        "#bank",
-        "#2023",
-        "#test",
-        "#test",
-        "#test",
-        "#test",
-        "#test",
-        "#test",
-        "#test",
-        "#test",
-        "#test",
+        "#Crypto",
+        "#Bank",
+        "#2024",
+        "#Financial",
+        "#Money",
+        "#Guide",
+        "#Beginner",
+        "#Invest",
+        "#Finance",
       ]}
       views={651394}
       likes={366545}
       comments={56}
     />
     <ResourceItem
-      itemThumbnail="https://www.investopedia.com/thmb/W2u8B017D-GDqZxH-ddc8BLS8qo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/top_6_apps_for_financial_news-5bfc3459c9e77c0026b6a2bf.jpg"
+      itemThumbnail="https://image.cnbcfm.com/api/v1/image/106826305-1624383819971-106826305-1611074293047-gettyimages-1295325607-_e6w9660_2021010863111059.jpg?v=1689789553&w=929&h=523&vtcrop=y"
       itemTitle="Bitcoin Price Jumps 10% But Can Pump BTC Back To $70K?"
       itemTags={["#BTC", "#bitcoin", "#2024"]}
       views={651}
@@ -44,9 +41,9 @@
       comments={6}
     />
     <ResourceItem
-      itemThumbnail="https://www.investopedia.com/thmb/W2u8B017D-GDqZxH-ddc8BLS8qo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/top_6_apps_for_financial_news-5bfc3459c9e77c0026b6a2bf.jpg"
-      itemTitle="Bitcoin Tops $67K on Dovish Fed Remarks asd;lkfasl;dfks;adlfs;ldafka;sdfk;asd fkasl;dfksd;lfksd;lfk;lsdkaf"
-      itemTags={["#crypto", "#bitcoin", "#Tops"]}
+      itemThumbnail="https://cdn.corporatefinanceinstitute.com/assets/financial-literacy1.jpeg"
+      itemTitle="Money Matters 101: Essential Financial Education for All"
+      itemTags={["#Money", "#Education", "#Beginner"]}
       views={65}
       likes={36545}
       comments={6}

@@ -29,25 +29,25 @@
       <TransactionHistory
         icon={amazon_icon}
         title="Amazon"
-        date="May 24, 2022"
+        date="May 24, 2023"
         amount="- RM10.56"
       />
       <TransactionHistory
-        icon={amazon_icon}
-        title="Amazon"
-        date="May 22, 2022"
-        amount="- RM13.56"
+        icon="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_de_Facebook.png"
+        title="Facebook"
+        date="May 22, 2023"
+        amount="- RM30.00"
+      />
+      <TransactionHistory
+        icon="https://technave.com/data/files/article/202207081005412770.jpeg"
+        title="Play Store"
+        date="May 21, 2023"
+        amount="- RM43.00"
       />
       <TransactionHistory
         icon={amazon_icon}
         title="Amazon"
-        date="May 21, 2022"
-        amount="- RM13.56"
-      />
-      <TransactionHistory
-        icon={amazon_icon}
-        title="Amazon"
-        date="May 14, 2022"
+        date="May 14, 2023"
         amount="- RM13.56"
       />
     </div>

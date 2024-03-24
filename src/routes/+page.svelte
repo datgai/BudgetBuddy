@@ -46,7 +46,7 @@
     <div
       class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
     >
-      <h2 class="mb-8 text-xl font-bold">MYR 1,800.00</h2>
+      <h2 class="mb-8 text-xl font-bold">MYR 5,800.00</h2>
       <h1 class="font-bold">Income</h1>
       <IncomeGraph />
     </div>
@@ -54,7 +54,7 @@
     <div
       class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
     >
-      <h2 class="mb-8 text-xl font-bold">MYR 1,800.00</h2>
+      <h2 class="mb-8 text-xl font-bold">MYR 1,200.00</h2>
       <h1 class="font-bold">Expenses</h1>
       <ExpenseGraph />
     </div>
@@ -72,7 +72,7 @@
     class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2"
   >
     <h2 class="mb-8 text-xl font-bold">Subscriptions</h2>
-    <h1 class="font-bold">MYR 1,800.00</h1>
+    <h1 class="font-bold">MYR 1,400.00</h1>
     <SubscriptionGraph />
   </div>
 
@@ -92,7 +92,7 @@
       <div class="flex-1 flex flex-row w-full p-2">
         <div class="flex-1">
           <h1 class="font-bold text-xl">Shopping</h1>
-          <h2>MYR 15.000.00</h2>
+          <h2>MYR 150.00</h2>
           <div class="flex items-center justify-between mt-0.5"></div>
         </div>
       </div>
