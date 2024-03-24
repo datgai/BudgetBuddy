@@ -38,12 +38,12 @@
             />
             <img
               class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
-              src={person_picture}
+              src="https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg"
               alt=""
             />
             <img
               class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
-              src={person_picture}
+              src="https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg"
               alt=""
             />
             <a

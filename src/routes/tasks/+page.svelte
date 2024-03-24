@@ -79,15 +79,15 @@
       <div
         class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
       >
-        <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
+        <TaskItem taskMission="7-Day login streak" isCompleted={true} experiencePoints={10}
         ></TaskItem>
         <TaskItem
-          taskMission="Record a transaction"
+          taskMission="Record 10 transactions"
           isCompleted={false}
           experiencePoints={20}
         ></TaskItem>
         <TaskItem
-          taskMission="Check the news"
+          taskMission="Join a text-channel"
           isCompleted={false}
           experiencePoints={10}
         ></TaskItem>
@@ -99,15 +99,15 @@
       <div
         class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
       >
-        <TaskItem taskMission="Login" isCompleted={true} experiencePoints={10}
+        <TaskItem taskMission="30-Day login streak" isCompleted={true} experiencePoints={10}
         ></TaskItem>
         <TaskItem
-          taskMission="Record a transaction"
+          taskMission="Record 30 transaction"
           isCompleted={false}
           experiencePoints={20}
         ></TaskItem>
         <TaskItem
-          taskMission="Check the news"
+          taskMission="Check 20 news"
           isCompleted={false}
           experiencePoints={10}
         ></TaskItem>

@@ -27,7 +27,7 @@
 
   <section class="mb-15 md:text-left">
     <div
-      class="flex flex-col mb-6 p-2 overflow-hidden min-h-[40vh] rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20 bg-[url(https://mdbcdn.b-cdn.net/img/new/standard/city/018.jpg)]"
+      class="flex flex-col mb-6 p-2 overflow-hidden min-h-[40vh] rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20 bg-[url(https://cryptonomist.ch/wp-content/uploads/2023/02/analisi-bitcoin-ethereum-1024x683.jpg)]"
       data-te-ripple-init
     >
       <div
@@ -61,48 +61,29 @@
 
     <div class="flex flex-col">
       <NewsItem
-        itemThumbnail="https://www.investopedia.com/thmb/W2u8B017D-GDqZxH-ddc8BLS8qo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/top_6_apps_for_financial_news-5bfc3459c9e77c0026b6a2bf.jpg"
+        itemThumbnail="https://i0.wp.com/asiatimes.com/wp-content/uploads/2022/10/9c987d2d8fb79b94beb63c972cb2ed74-copy.jpg?fit=1200%2C675&ssl=1"
         itemCountry="Malaysia"
-        itemTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean odio eros, feugiat nec aliquet ac, cursus ac ligula. Vivamus a luctus ligula. Aliquam vulputate vestibulum lobortis. Cras a dapibus nulla. Sed pellentesque luctus dolor, ut faucibus odio placerat nec. Fusce feugiat tempor eleifend. Fusce efficitur eu nisi consequat lacinia."
+        itemTitle="Malaysia: the surprise winner from US-China chip wars"
         authorThumbnail="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/BBC_News_logo.svg/2560px-BBC_News_logo.svg.png"
         authorTitle="BBC"
         authoredAgo="10 min ago"
       ></NewsItem>
       <NewsItem
-        itemThumbnail="https://www.investopedia.com/thmb/W2u8B017D-GDqZxH-ddc8BLS8qo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/top_6_apps_for_financial_news-5bfc3459c9e77c0026b6a2bf.jpg"
+        itemThumbnail="https://thediplomat.com/wp-content/uploads/2022/02/sizes/td-story-s-2/thediplomat_2022-02-22-051828.jpg"
         itemCountry="Malaysia"
         itemTitle="Bank Negara committed to ensure Malaysia's financial system remains
       resilient"
         authorThumbnail="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/BBC_News_logo.svg/2560px-BBC_News_logo.svg.png"
         authorTitle="BBC"
-        authoredAgo="10 min ago"
+        authoredAgo="30 min ago"
       ></NewsItem>
       <NewsItem
-        itemThumbnail="https://www.investopedia.com/thmb/W2u8B017D-GDqZxH-ddc8BLS8qo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/top_6_apps_for_financial_news-5bfc3459c9e77c0026b6a2bf.jpg"
-        itemCountry="Malaysia"
-        itemTitle="Bank Negara committed to ensure Malaysia's financial system remains
-    resilient"
+        itemThumbnail="https://apicms.thestar.com.my/uploads/images/2024/03/23/2607309.jpeg"
+        itemCountry="Palestine"
+        itemTitle="Oil prices down on Gaza ceasefire talks"
         authorThumbnail="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/BBC_News_logo.svg/2560px-BBC_News_logo.svg.png"
         authorTitle="BBC"
-        authoredAgo="10 min ago"
-      ></NewsItem>
-      <NewsItem
-        itemThumbnail="https://www.investopedia.com/thmb/W2u8B017D-GDqZxH-ddc8BLS8qo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/top_6_apps_for_financial_news-5bfc3459c9e77c0026b6a2bf.jpg"
-        itemCountry="Malaysia"
-        itemTitle="Bank Negara committed to ensure Malaysia's financial system remains
-  resilient"
-        authorThumbnail="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/BBC_News_logo.svg/2560px-BBC_News_logo.svg.png"
-        authorTitle="BBC"
-        authoredAgo="10 min ago"
-      ></NewsItem>
-      <NewsItem
-        itemThumbnail="https://www.investopedia.com/thmb/W2u8B017D-GDqZxH-ddc8BLS8qo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/top_6_apps_for_financial_news-5bfc3459c9e77c0026b6a2bf.jpg"
-        itemCountry="Malaysia"
-        itemTitle="Bank Negara committed to ensure Malaysia's financial system remains
-resilient"
-        authorThumbnail="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/BBC_News_logo.svg/2560px-BBC_News_logo.svg.png"
-        authorTitle="BBC"
-        authoredAgo="10 min ago"
+        authoredAgo="40 min ago"
       ></NewsItem>
     </div>
   </section>
