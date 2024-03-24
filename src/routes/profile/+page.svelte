@@ -57,14 +57,17 @@
       >
         Level 12
       </p>
-      <div
-        class="shadowEffect w-full bg-gray-200 rounded-full h-4 mb-4 dark:bg-white border border-indigo-500"
-      >
+      <div class="flex">
         <div
-          class="bg-blue-600 h-4 rounded-full dark:bg-blue-500 shadowEffect"
-          style="width: 45%"
-        ></div>
+          class="mx-auto shadowEffect bg-gray-200 rounded-full h-4 w-[60vw] mb-4 dark:bg-white border border-indigo-500"
+        >
+          <div
+            class="bg-blue-600 h-4 rounded-full dark:bg-blue-500 shadowEffect"
+            style="width: 40%"
+          ></div>
+        </div>
       </div>
+
       <div class="flex flex-row mx-auto justify-center">
         <p
           class="font-bold text-xl text-[var(--color-text)] truncate text-center mx-2"
@@ -103,7 +106,7 @@
 </body>
 
 <style>
-  li:hover{
+  li:hover {
     background-color: white;
     color: black;
     border-radius: 20px;

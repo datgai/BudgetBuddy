@@ -113,6 +113,5 @@
         ></TaskItem>
       </div>
     </div>
-    <div class="h-[80px]"></div>
   </div>
 </div>
