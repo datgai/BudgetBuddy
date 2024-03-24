@@ -10,5 +10,5 @@
     <slot />
   </main>
 
-  <footer></footer>
+  <footer><div class="h-[70px] md:h-[0px]"></div></footer>
 </div>

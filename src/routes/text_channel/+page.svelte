@@ -113,5 +113,4 @@
       >
     </div>
   </div>
-  <div class="h-[70px] md:h-[0px]"></div>
 </div>

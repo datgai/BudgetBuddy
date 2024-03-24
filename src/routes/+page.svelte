@@ -19,7 +19,7 @@
   </div>
 
   <div
-    class="flex flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-3"
+    class="flex flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-3"
   >
     <h2 class="mb-8 text-2xl font-bold">Available Balance</h2>
     <h1 class="text-3xl font-bold">MYR 50,000.00</h1>
@@ -44,7 +44,7 @@
 
   <div class="flex flex-row">
     <div
-      class="flex flex-1 flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
+      class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
     >
       <h2 class="mb-8 text-xl font-bold">MYR 1,800.00</h2>
       <h1 class="font-bold">Income</h1>
@@ -52,7 +52,7 @@
     </div>
 
     <div
-      class="flex flex-1 flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
+      class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
     >
       <h2 class="mb-8 text-xl font-bold">MYR 1,800.00</h2>
       <h1 class="font-bold">Expenses</h1>
@@ -61,7 +61,7 @@
   </div>
 
   <div
-    class="flex flex-1 flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2"
+    class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2"
   >
     <h2 class="mb-8 text-xl font-bold">Investments</h2>
     <h1 class="font-bold">MYR 1,800.00</h1>
@@ -69,7 +69,7 @@
   </div>
 
   <div
-    class="flex flex-1 flex-col bg-[color:var(--color-theme-1)] backdrop-blur-lg border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2"
+    class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2"
   >
     <h2 class="mb-8 text-xl font-bold">Subscriptions</h2>
     <h1 class="font-bold">MYR 1,800.00</h1>
@@ -77,9 +77,7 @@
   </div>
 
   <h2 class="mb-8 text-3xl font-bold">Categories</h2>
-  <div
-    class="flex bg-[color:var(--color-theme-1)] backdrop-blur-lg rounded-2xl w-full px-2 py-2"
-  >
+  <div class="flex cardGradientBackground rounded-2xl w-full px-2 py-2">
     <div class="flex">
       <svg
         xmlns="http://www.w3.org/2000/svg"
