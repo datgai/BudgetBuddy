@@ -1,5 +1,4 @@
 <script>
-  // @ts-nocheck
   import MobileHeader from "$lib/components/MobileHeader.svelte";
   import IncomeGraph from "$lib/components/IncomeGraph.svelte";
   import ExpenseGraph from "$lib/components/ExpenseGraph.svelte";
@@ -9,7 +8,7 @@
 
 <svelte:head>
   <title>Dashboard</title>
-  <meta name="description" content="Svelte demo app" />
+  <meta name="description" />
 </svelte:head>
 
 <div>
