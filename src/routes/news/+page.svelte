@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   // @ts-nocheck
 
   import MobileHeader from "$lib/components/MobileHeader.svelte";
@@ -85,6 +85,88 @@
         authorTitle="BBC"
         authoredAgo="40 min ago"
       ></NewsItem>
+    </div>
+  </section>
+</div> -->
+
+<script>
+  import { onMount } from "svelte";
+  import { supabase } from "../../main";
+  import MobileHeader from "$lib/components/MobileHeader.svelte";
+  import NewsItem from "$lib/components/NewsItem.svelte";
+
+  /**
+   * @type {any[]}
+   */
+  let news = [];
+
+  onMount(async () => {
+    const { data, error } = await supabase.from("news").select("*");
+    if (error) {
+      console.error("Error fetching news:", error.message);
+    } else {
+      news = data;
+    }
+  });
+</script>
+
+<svelte:head>
+  <title>News</title>
+</svelte:head>
+
+<div>
+  <MobileHeader />
+  <div>
+    <h2 class="my-2 text-3xl font-bold">News</h2>
+  </div>
+
+  <section class="mb-15 md:text-left">
+    <div
+      class="flex flex-col mb-6 p-2 overflow-hidden min-h-[40vh] rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20 bg-[url(https://cryptonomist.ch/wp-content/uploads/2023/02/analisi-bitcoin-ethereum-1024x683.jpg)]"
+      data-te-ripple-init
+    >
+      <div
+        class="flex-1 text-3xl text-white text-wrap py-2 my-2 overflow-hidden"
+      >
+        Crypto investors should be prepared to lose all their money, BOE
+        governor says
+      </div>
+      <div class="text-xs text-white text-wrap pr-5">
+        “I’m going to say this very bluntly again,” he added. “Buy them only if
+        you’re prepared to lose all your money.”
+      </div>
+    </div>
+  </section>
+  <section class="mb-[10vh]">
+    <div class="info">
+      <div class="info">
+        <div class="flex justify-between text-base">
+          <div class="font-semibold">Latest</div>
+          <div>See all</div>
+        </div>
+        <ul
+          class="flex text-nowrap shrink-0 space-x-20 overflow-auto text-base py-2 my-2"
+        >
+          <li class="font-semibold underline underline-offset-8">All</li>
+          <li>Trading</li>
+          <li>Crypto</li>
+          <li>Banking</li>
+          <li>Real Estate</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      {#each news as article}
+        <NewsItem
+          itemThumbnail={article.itemThumbnail}
+          itemCountry={article.itemCountry}
+          itemTitle={article.itemTitle}
+          authorThumbnail={article.authorThumbnail}
+          authorTitle={article.authorTitle}
+          authoredAgo={article.authoredAgo}
+        ></NewsItem>
+      {/each}
     </div>
   </section>
 </div>
