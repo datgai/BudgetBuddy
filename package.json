@@ -13,6 +13,8 @@
 		"@neoconfetti/svelte": "^1.0.0",
 		"@smui/button": "^7.0.0-beta.18",
 		"@smui/card": "^7.0.0-beta.18",
+		"@supabase/auth-helpers-sveltekit": "^0.12.0",
+		"@supabase/supabase-js": "^2.42.0",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
