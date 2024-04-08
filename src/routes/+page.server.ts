@@ -1,14 +1,14 @@
-// src/routes/+page.server.ts
 import { redirect } from '@sveltejs/kit'
 import type { PageServerLoad } from './$types'
 
-export const load: PageServerLoad = async ({ url, locals: { safeGetSession } }) => {
-    const { session } = await safeGetSession()
+export const load: PageServerLoad = async ({ locals: { supabase, safeGetSession } }) => {
+    const { session, user } = await safeGetSession()
 
-    // if the user is already logged in return them to the account page
-    if (session) {
-        throw redirect(303, '/profile')
+    if (!session) {
+        throw redirect(303, '/login')
     }
 
-    return { url: url.origin }
+    console.log(user)
+    console.log(user.identities.identity_data)
+    return { session, user }
 }

@@ -1,9 +1,14 @@
-<script>
+<script lang="ts">
   import MobileHeader from "$lib/components/MobileHeader.svelte";
   import IncomeGraph from "$lib/components/IncomeGraph.svelte";
   import ExpenseGraph from "$lib/components/ExpenseGraph.svelte";
   import InvestmentGraph from "$lib/components/InvestmentGraph.svelte";
   import SubscriptionGraph from "$lib/components/SubscriptionGraph.svelte";
+  import type { PageData } from "./$types";
+
+  export let data: PageData;
+  let { supabase, session, user } = data;
+  $: ({ supabase, session, user } = data);
 </script>
 
 <svelte:head>
@@ -12,9 +17,11 @@
 </svelte:head>
 
 <div>
-  <MobileHeader />
+  <!-- <MobileHeader username={profile?.username} /> -->
   <div>
-    <h2 class="my-2 text-3xl font-bold">Dashboard</h2>
+    <h2 class="my-2 text-3xl font-bold">
+      {user}'s Dashboard
+    </h2>
   </div>
 
   <div

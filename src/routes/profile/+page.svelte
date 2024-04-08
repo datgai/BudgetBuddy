@@ -11,9 +11,8 @@
 
   let profileForm: HTMLFormElement;
   let loading = false;
-  let fullName: string = profile?.full_name ?? "";
   let username: string = profile?.username ?? "";
-  let website: string = profile?.website ?? "";
+  let phoneNumber: string = profile?.phone_number ?? "";
   let avatarUrl: string = profile?.avatar_url ?? "";
 
   const handleSubmit: SubmitFunction = () => {
@@ -74,10 +73,11 @@
       <p
         class="font-bold text-xl text-[var(--color-text)] truncate text-center"
       >
-        Adam Bob
+        {username}
+        {phoneNumber}
       </p>
       <p class="truncate text-xl text-[var(--color-text-inactive)] text-center">
-        AdamsBob@mail.com
+        {session?.user.email}
       </p>
     </div>
 
@@ -130,11 +130,15 @@
       <li class="p-3">About</li>
       <li class="p-3">FAQ</li>
       <li class="p-3">Rate Us</li>
-      <li class="p-3">Sign Out</li>
+      <li class="p-3">
+        <form method="post" action="?/signout" use:enhance={handleSignOut}>
+          <button class="button block" disabled={loading}>Sign Out</button>
+        </form>
+      </li>
     </ul>
   </div>
 
-  <div>
+  <!-- <div>
     <div class="form-widget">
       <form
         class="form-widget"
@@ -186,15 +190,7 @@
             disabled={loading}
           />
         </div>
-      </form>
-
-      <form method="post" action="?/signout" use:enhance={handleSignOut}>
-        <div>
-          <button class="button block" disabled={loading}>Sign Out</button>
-        </div>
-      </form>
-    </div>
-  </div>
+      </form> -->
 </body>
 
 <style>
