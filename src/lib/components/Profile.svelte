@@ -1,16 +1,16 @@
 <script lang="ts">
   import person_picture from "$lib/images/Person.png";
-  export let username: string;
+  export let profile: any;
 </script>
 
 <a
-  class="flex cardGradientBackgroundSecond shadowEffect rounded-full w-[180px] py-1"
+  class="flex cardGradientBackgroundSecond shadowEffect rounded-full py-1"
   href="profile"
 >
-  {#if username}
-    <div class="flex-1 w-[50%] flex-row mx-2 my-auto">
+  {#if profile}
+    <div class="flex-1 w-[100px] flex-row mx-2 my-auto">
       <p class="font-bold text-sm text-[var(--color-text)] truncate">
-        {username}
+        {profile.username}
       </p>
       <p class="truncate text-xs text-[var(--color-text-inactive)]">
         View Profile
@@ -25,6 +25,8 @@
       />
     </div>
   {:else}
-    <p>Login</p>
+    <div class="flex-1 flex-row mx-2 my-auto">
+      <p>Login</p>
+    </div>
   {/if}
 </a>

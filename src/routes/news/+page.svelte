@@ -1,7 +1,4 @@
 <script>
-  // @ts-nocheck
-
-  import MobileHeader from "$lib/components/MobileHeader.svelte";
   import NewsItem from "$lib/components/NewsItem.svelte";
   const images = [
     {
@@ -20,7 +17,6 @@
 </svelte:head>
 
 <div>
-  <MobileHeader />
   <div>
     <h2 class="my-2 text-3xl font-bold">News</h2>
   </div>

@@ -1,14 +1,17 @@
-<script>
+<script lang="ts">
+  import type { LayoutData } from "./$types";
   import Navbar from "$lib/components/Navbar.svelte";
   import "./styles.css";
   import "../app.css";
   import { invalidate } from "$app/navigation";
   import { onMount } from "svelte";
+  import { page } from "$app/stores";
+  import MobileHeader from "$lib/components/MobileHeader.svelte";
 
-  export let data;
+  export let data: LayoutData;
 
-  let { supabase, session } = data;
-  $: ({ supabase, session } = data);
+  let { supabase, session, profile } = data;
+  $: ({ supabase, session, profile } = data);
 
   onMount(() => {
     const { data } = supabase.auth.onAuthStateChange((event, _session) => {
@@ -21,9 +24,14 @@
   });
 </script>
 
+<svelte:head>
+  <title>BudgetBuddy - {$page.data.title}</title>
+</svelte:head>
+
 <div class="app">
   <Navbar />
   <main class="md:px-6 p-4">
+    <MobileHeader {profile} />
     <slot />
   </main>
 

@@ -1,5 +1,4 @@
 <script>
-  import MobileHeader from "$lib/components/MobileHeader.svelte";
   import TaskItem from "$lib/components/TaskItem.svelte";
 </script>
 
@@ -8,7 +7,6 @@
 </svelte:head>
 
 <div>
-  <MobileHeader />
   <div>
     <h2 class="my-2 text-3xl font-bold">Tasks</h2>
   </div>
@@ -31,9 +29,7 @@
         ></div>
       </div>
       <div class="flex flex-row mx-auto justify-center">
-        <p
-          class="font-bold text-xl text-[var(--color-text)] truncate text-center mx-2"
-        >
+        <p class="font-bold text-xl text--text)] truncate text-center mx-2">
           View Rewards
         </p>
         <svg
@@ -79,7 +75,10 @@
       <div
         class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
       >
-        <TaskItem taskMission="7-Day login streak" isCompleted={true} experiencePoints={10}
+        <TaskItem
+          taskMission="7-Day login streak"
+          isCompleted={true}
+          experiencePoints={10}
         ></TaskItem>
         <TaskItem
           taskMission="Record 10 transactions"
@@ -99,7 +98,10 @@
       <div
         class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]"
       >
-        <TaskItem taskMission="30-Day login streak" isCompleted={true} experiencePoints={10}
+        <TaskItem
+          taskMission="30-Day login streak"
+          isCompleted={true}
+          experiencePoints={10}
         ></TaskItem>
         <TaskItem
           taskMission="Record 30 transaction"

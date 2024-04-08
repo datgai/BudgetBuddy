@@ -1,6 +1,5 @@
 <script>
   import Logo from "$lib/images/BudgetBuddyFull.png";
-  export let data;
 </script>
 
 <svelte:head>
