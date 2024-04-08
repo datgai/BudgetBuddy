@@ -1,116 +1,129 @@
 <script lang="ts">
-  import MessageItem from "$lib/components/MessageItem.svelte";
-  import leftarrow from "$lib/images/arrow.png";
-  import send from "$lib/images/send.png";
-
-  interface Resource {
+  // Imports
+  import MessageItem from "$lib/components/MessageItem.svelte"; // Importing MessageItem component
+  import leftarrow from "$lib/images/arrow.png"; // Importing left arrow image
+  import send from "$lib/images/send.png"; // Importing send image
+  import personProfile from "$lib/images/Person.png"; // Importing default profile image
+  import { supabase } from "../../main"; // Importing supabase client instance
+  
+  // Interface for message object
+  interface Message {
+    id: number;
     text: string;
-    user: boolean;
-    userName: string;
-    time: string;
-    profile: string;
+    user_name: string;
+    created_at: string;
+    profile?: string;
   }
 
-  const resources: Resource[] = [
-    {
-      text: "Bitcoin is an innovative payment network and a new kind of money. Find all you need to know and get started with Bitcoin on bitcoin.org",
-      user: false,
-      userName: "Adam",
-      time: "7 min ago",
-      profile: "",
-    },
-    {
-      text: "Yes",
-      user: true,
-      userName: "John",
-      time: "5 min ago",
-      profile:
-        "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg",
-    },
-    {
-      text: "Is Bitcoin a good investment?",
-      user: true,
-      userName: "Gilbert",
-      time: "4 min ago",
-      profile:
-        "https://img.freepik.com/free-photo/close-up-attractive-handsome-man_144627-14151.jpg",
-    },
-    {
-      text: "the first decentralized cryptocurrency",
-      user: true,
-      userName: "Adeline",
-      time: "4 min ago",
-      profile:
-        "https://parrotprint.com/wp/wp-content/uploads/2017/04/pexels-photo-27411.jpg",
-    },
-    {
-      text: "Should be considered only if you have a high risk tolerance",
-      user: false,
-      userName: "Adam",
-      time: "2 min ago",
-      profile: "../lib/images/Person.png",
-    },
-    {
-      text: "Ya",
-      user: false,
-      userName: "Adam",
-      time: "1 min ago",
-      profile: "$lib/images/Person.png",
-    },
-    {
-      text: "How much is $1 Bitcoin in US dollars?",
-      user: false,
-      userName: "Adam",
-      time: "1 min ago",
-      profile: "$lib/images/Person.png",
-    },
+  // Array to store fetched messages
+  let messages: Message[] = [];
 
-    {
-      text: "Nice",
-      user: false,
-      userName: "Adam",
-      time: "1 min ago",
-      profile: "$lib/images/Person.png",
-    },
+  // Variable to store new message input
+  let newMessageText = '';
 
-    {
-      text: "Why is Bitcoin falling?",
-      user: true,
-      userName: "John",
-      time: "1 min ago",
-      profile:
-        "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg",
-    },
-  ];
+  // Function to fetch messages from database
+  async function fetchMessages() {
+    const { data, error } = await supabase.from('messages').select('*').order('id', { ascending: true });
+    if (error) {
+      console.error('Error fetching messages:', error.message);
+    } else {
+      messages = data;
+    }
+  }
+
+  // Function to post a new message to the database
+  async function postMessage(text: string, userName: string) {
+    const { data, error } = await supabase.from('messages').insert([{ text, user_name: userName }]);
+    if (error) {
+      console.error('Error posting message:', error.message);
+    } else {
+      await fetchMessages(); // Fetch updated messages
+      newMessageText = ''; // Clear new message input
+      scrollToBottom(); // Scroll to bottom to show new message
+    }
+  }
+
+  // Function to scroll to the bottom of messages container
+  function scrollToBottom() {
+    const messagesContainer = document.querySelector('.messages-container');
+    if (messagesContainer) {
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+  }
+  
+  // Function to format message timestamp
+  function formatTime(timestamp: string): string {
+    const messageTime = new Date(timestamp);
+    const currentTime = new Date();
+    const diff = Math.floor((currentTime.getTime() - messageTime.getTime()) / 1000); 
+
+    if (diff < 60) {
+      return 'just now';
+    } else if (diff < 3600) {
+      const minutes = Math.floor(diff / 60);
+      return `${minutes} min${minutes > 1 ? 's' : ''} ago`;
+    } else if (diff < 24 * 3600) {
+      const hours = Math.floor(diff / 3600);
+      return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+    } else {
+      const day = messageTime.getDate();
+      const month = messageTime.getMonth() + 1;
+      const year = messageTime.getFullYear() % 100;
+      const hours = messageTime.getHours();
+      const minutes = messageTime.getMinutes() < 10 ? '0' + messageTime.getMinutes() : messageTime.getMinutes();
+      const ampm = hours >= 12 ? 'pm' : 'am';
+      const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+      return `${month}/${day}/${year} ${formattedHours}:${minutes}${ampm}`;
+    }
+  }
+
+  // Fetch messages when the component mounts
+  fetchMessages();
 </script>
 
 <div class="-m-4 md:-m-6">
-  <div class="flex bg-[#060047] h-[8vh] justify-start px-[15px]">
-    <a href="forums" class="m-auto w-[35px] h-[35px]"
-      ><img src={leftarrow} alt="" /></a
-    >
+  <!-- Top bar -->
+  <div class="flex bg-[#060047] h-[8vh] justify-start px-[15px]  w-[100%] md:hidden">
+    <a href="forums" class="m-auto w-[35px] h-[35px]">
+      <img src={leftarrow} alt="" />
+    </a>
     <h2 class="flex-1 text-2xl font-bold text-white m-auto">
       Tips For Budgeting
     </h2>
   </div>
 
-  <div class="flex flex-col h-[85vh] justify-between h-screen">
-    <div class="p-4 space-y-4 -mb-2 bg-gray-100 overflow-auto">
-      {#each resources as resource}
-        <MessageItem {...resource} />
+  <!-- Messages container -->
+  <div class="flex flex-col h-[77vh] bg-gray-100 justify-between">
+    <div class="p-4 space-y-4 bg-gray-100 overflow-auto messages-container">
+      {#each messages as message}
+        <MessageItem 
+          userName={message.user_name}
+          text={message.text}
+          user={message.user_name !== "John"}
+          time={formatTime(message.created_at)}
+          profile={message.profile || personProfile}
+        />
       {/each}
     </div>
-    <div class="flex justify-between items-start p-4 bg-white bg-[#bdbebf]">
-      <input
-        class=" flex-1 mx-2 border-2 w-[80%] rounded p-3 text-sm shadow-inner text-[black] rounded-[20px]"
-        type="text"
-        placeholder="Type your message…"
-      />
+  </div>
+
+  <!-- New message input and send button -->
+  <div class="flex justify-between items-start p-4 bg-white bg-[#bdbebf] fixed w-[100%] bottom-16 md:bottom-0">
+    <input
+      bind:value={newMessageText}
+      class=" flex-1 mx-2 border-2 w-[80%] rounded p-3 text-sm shadow-inner text-[black] rounded-[20px]"
+      type="text"
+      placeholder="Type your message…"
+    />
+    {#if newMessageText !== ""}
       <button
-        type="submit"
+        on:click={() => {
+          postMessage(newMessageText, "John");
+        }}
         class="h-[45px] w-[45px] bg-blue-600 p-2.5 rounded-[50%]"
-        ><img src={send} alt="" class="bg-center" /></button
       >
-    </div>
+        <img src={send} alt="" class="bg-center" />
+      </button>
+    {/if}
   </div>
 </div>
