@@ -23,3 +23,16 @@ export async function filterNews(type: string) {
         }
     }
 }
+
+
+export async function fetchRandomNews() {
+    const { data: allNews, error } = await supabase.from('news').select('*');
+    if (error) {
+        console.error('Error fetching news:', error.message);
+        return null;
+    } else {
+        const randomIndex = Math.floor(Math.random() * allNews.length);
+        const randomNews = allNews[randomIndex];
+        return randomNews || null;
+    }
+}
