@@ -7,12 +7,6 @@ export const load: PageServerLoad = async ({ locals: { supabase, safeGetSession 
     if (!session) {
         throw redirect(303, '/login')
     }
-    const { data: profile } = await supabase
-        .from('profiles')
-        .select(`username, phone_number,avatar_url`)
-        .eq('id', session.user.id)
-        .single()
-    return { session, profile }
 }
 
 export const actions: Actions = {

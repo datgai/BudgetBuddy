@@ -13,7 +13,7 @@ export const load: PageServerLoad = async ({ url, locals: { safeGetSession } }) 
 }
 
 export const actions: Actions = {
-    login: async ({ request, locals: { supabase, safeGetSession } }) => {
+    login: async ({ request, locals: { supabase } }) => {
         const formData = await request.formData()
         const userEmail = formData.get('userEmail') as string
         const userPassword = formData.get('userPassword') as string

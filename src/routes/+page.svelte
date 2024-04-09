@@ -27,7 +27,7 @@
     <h1 class="text-3xl font-bold">MYR 50,000.00</h1>
     <div class="flex flex-row mx-2">
       <a href="transactions" class="flex-1 my-auto">See details</a>
-      <a href="/"
+      <a href="/transactions/new"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
