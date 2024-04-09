@@ -37,7 +37,7 @@
     </a>
 
     <a
-      href="news"
+      href="../news"
       class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
       <svg
@@ -59,7 +59,7 @@
       <p class="invisible md:visible">News</p></a
     >
     <a
-      href="forums"
+      href="../forums"
       class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
       <svg
@@ -80,7 +80,7 @@
       <p class="invisible md:visible">Forums</p></a
     >
     <a
-      href="resources"
+      href="../resources"
       class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@
       <p class="invisible md:visible">Resources</p></a
     >
     <a
-      href="tasks"
+      href="../tasks"
       class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
       <svg

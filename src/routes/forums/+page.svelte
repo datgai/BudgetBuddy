@@ -31,7 +31,7 @@
 
   <div>
     {#each forums as forum}
-      <a href="text_channel/{forum.id}">
+      <a href="forums/{forum.id}">
         <ForumsItem
           itemThumbnail={forum.thumbnail}
           itemTitle={forum.title}
