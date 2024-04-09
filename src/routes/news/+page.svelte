@@ -1,7 +1,9 @@
+
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
   import {filterNews, fetchRandomNews} from "./page";
   import MobileHeader from "$lib/components/MobileHeader.svelte";
+
   import NewsItem from "$lib/components/NewsItem.svelte";
 
   let news: any[] = [];

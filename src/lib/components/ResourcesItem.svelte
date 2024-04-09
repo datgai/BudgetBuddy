@@ -8,9 +8,7 @@
   export let comments: number;
 </script>
 
-<div
-  class="rounded-[var(--card-border-radius)] shadowEffect"
->
+<div class="rounded-[var(--card-border-radius)] shadowEffect">
   <div class="flex flex-col sm:flex-row">
     {#if itemThumbnail}
       <img
