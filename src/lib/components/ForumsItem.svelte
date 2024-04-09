@@ -3,7 +3,6 @@
   export let itemThumbnail: string | undefined = undefined;
   export let itemTitle: string;
   export let itemDescription: string;
-  export let chatRoomURL: string;
 </script>
 
 <div
@@ -52,7 +51,6 @@
             >
           </div>
         </div>
-        <a href={chatRoomURL}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -66,8 +64,7 @@
               stroke-linejoin="round"
               d="m8.25 4.5 7.5 7.5-7.5 7.5"
             />
-          </svg></a
-        >
+          </svg>
       </div>
     </div>
   </div>

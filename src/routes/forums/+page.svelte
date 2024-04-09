@@ -31,11 +31,12 @@
 
   <div>
     {#each forums as forum}
-      <a href="{forum.chatRoomURL}">
+      <a href="text_channel/{forum.id}">
         <ForumsItem
           itemThumbnail={forum.thumbnail}
           itemTitle={forum.title}
           itemDescription={forum.description}
+          itemId = {forum.id}
         ></ForumsItem>
       </a>
     {/each}
