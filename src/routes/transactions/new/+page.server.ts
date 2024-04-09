@@ -18,8 +18,7 @@ export const actions: Actions = {
             transaction_user: transactionUser
         })
         if (error) {
-            console.log(error)
-            // return fail(Number(error.code), error)
+            return fail(Number(error.code), error)
         }
         throw redirect(303, '/transactions')
     }
