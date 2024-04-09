@@ -1,21 +1,23 @@
-<script>
-  // @ts-nocheck
-  import MobileHeader from "$lib/components/MobileHeader.svelte";
+<script lang="ts">
   import IncomeGraph from "$lib/components/IncomeGraph.svelte";
   import ExpenseGraph from "$lib/components/ExpenseGraph.svelte";
   import InvestmentGraph from "$lib/components/InvestmentGraph.svelte";
   import SubscriptionGraph from "$lib/components/SubscriptionGraph.svelte";
+  import type { PageData } from "./$types";
+
+  export let data: PageData;
+  let { supabase, session, user, profile } = data;
+  $: ({ supabase, session, user, profile } = data);
 </script>
 
 <svelte:head>
   <title>Dashboard</title>
-  <meta name="description" content="Svelte demo app" />
+  <meta name="description" />
 </svelte:head>
 
 <div>
-  <MobileHeader />
   <div>
-    <h2 class="my-2 text-3xl font-bold">Dashboard</h2>
+    <h2 class="my-2 text-3xl font-bold">{profile?.username}'s Dashboard</h2>
   </div>
 
   <div
@@ -25,7 +27,7 @@
     <h1 class="text-3xl font-bold">MYR 50,000.00</h1>
     <div class="flex flex-row mx-2">
       <a href="transactions" class="flex-1 my-auto">See details</a>
-      <a href="/"
+      <a href="/transactions/new"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"

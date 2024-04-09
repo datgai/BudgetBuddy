@@ -1,6 +1,4 @@
 <script>
-// @ts-nocheck
-
   import MobileHeader from "$lib/components/MobileHeader.svelte";
   import ForumsItem from "$lib/components/ForumsItem.svelte";
   import { onMount } from "svelte";
@@ -24,7 +22,6 @@
 </svelte:head>
 
 <div>
-  <MobileHeader />
   <div>
     <h2 class="my-2 text-3xl font-bold">Forums</h2>
   </div>

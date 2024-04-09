@@ -1,5 +1,4 @@
 <script>
-  import MobileHeader from "$lib/components/MobileHeader.svelte";
   import ResourceItem from "$lib/components/ResourcesItem.svelte";
 </script>
 
@@ -8,7 +7,6 @@
 </svelte:head>
 
 <div>
-  <MobileHeader />
   <div>
     <h2 class="my-2 text-3xl font-bold">Resources</h2>
   </div>

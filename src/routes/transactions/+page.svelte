@@ -1,5 +1,4 @@
 <script>
-  import MobileHeader from "$lib/components/MobileHeader.svelte";
   import Overview from "$lib/components/Overview.svelte";
   import TransactionHistory from "$lib/components/TransactionHistory.svelte";
   import expenses_graph from "$lib/images/expenses.png";
@@ -13,7 +12,6 @@
 
 <div>
   <div>
-    <MobileHeader />
     <div>
       <h2 class="my-2 text-3xl font-bold">Transactions</h2>
     </div>
