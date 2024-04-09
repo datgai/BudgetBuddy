@@ -5,7 +5,7 @@
 
 <a
   class="flex cardGradientBackgroundSecond shadowEffect rounded-full py-1"
-  href="profile"
+  href="/profile"
 >
   {#if profile}
     <div class="flex-1 w-[100px] flex-row mx-2 my-auto">

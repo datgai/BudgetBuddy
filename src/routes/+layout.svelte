@@ -29,7 +29,7 @@
 </svelte:head>
 
 <div class="app">
-  <Navbar />
+  <Navbar {profile} />
   <main class="md:px-6 p-4">
     <MobileHeader {profile} />
     <slot />
