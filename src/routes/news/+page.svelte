@@ -15,14 +15,15 @@
     { label: "Banking" },
     { label: "Real Estate" },
   ];
+  let randomNewsId:number;
   let randomNewsTitle: string = ""; 
   let randomNewsThumbnail:string = ""
   let interval: NodeJS.Timeout | null = null; 
 
   onMount(async () => {
     await updateNews(activeButton);
-    getRandomNewsTitle();
-    interval = setInterval(getRandomNewsTitle, 3000);
+    getRandomNews();
+    interval = setInterval(getRandomNews, 3000);
   });
 
   onDestroy(() => {
@@ -36,9 +37,10 @@
     news = await filterNews(type);
   }
 
-  async function getRandomNewsTitle() {
+  async function getRandomNews() {
     let randomNews = await fetchRandomNews(); 
     if (randomNews) {
+      randomNewsId = randomNews.id;
       randomNewsTitle = randomNews.itemTitle; 
       randomNewsThumbnail = randomNews.itemThumbnail; 
     }
@@ -56,6 +58,7 @@
     <h2 class="my-2 text-3xl font-bold">News</h2>
   </div>
   <section class="mb-15 md:text-left">
+    <a href="news/{randomNewsId}">
     <div
       class="relative mb-6 p-2 overflow-hidden min-h-[35vh] rounded-lg shadow-lg dark:shadow-black/20"
       data-te-ripple-init
@@ -73,6 +76,7 @@
 
       </div>
     </div>
+    </a>
   </section>
 
   <section class="mb-[10vh]">
@@ -99,7 +103,7 @@
 
     <div class="flex flex-col">
       {#each news as article}
-        <a href={article.link}>
+        <a href="news/{article.id}">
           <NewsItem
             itemThumbnail={article.itemThumbnail}
             itemCountry={article.itemCountry}

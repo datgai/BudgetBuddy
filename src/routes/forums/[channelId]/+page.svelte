@@ -15,6 +15,7 @@
   
     // Variable to store new message input
     let newMessageText = "";
+    
   
     // Function to fetch messages from database
     async function fetchMessages() {
