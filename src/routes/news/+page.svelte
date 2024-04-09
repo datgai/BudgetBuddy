@@ -39,9 +39,6 @@
     if (randomNews) {
       randomNewsTitle = randomNews.itemTitle; 
       randomNewsThumbnail = randomNews.itemThumbnail; 
-      console.log(randomNewsTitle)
-      console.log(randomNewsThumbnail)
-
     }
   }
 </script>

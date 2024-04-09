@@ -32,6 +32,7 @@
 	"dependencies": {
 		"chart.js": "^4.4.2",
 		"remark-html": "^16.0.1",
+		"resize-observer": "^1.0.4",
 		"svelte-chartjs": "^3.1.5"
 	}
 }
