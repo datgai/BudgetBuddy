@@ -87,18 +87,16 @@
         isNegativeAllowed={false}
       />
     </div>
+
+    <div>
+      Transaction Description:
+      <input type="text" name="transactionDescription" />
+    </div>
     <button
       type="submit"
       class="bg-[var(--color-theme-1)] gradientBackground font-medium rounded-lg w-full my-6 py-4 text-center"
     >
       Record Transaction
     </button>
-  </div>
-  <div class="flex">
-    <p class="mx-auto">
-      Don't have an account? <a href="register" class="textGradient">
-        Sign Up</a
-      >
-    </p>
   </div>
 </form>
