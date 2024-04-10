@@ -9,7 +9,7 @@ export const load: PageServerLoad = async ({ locals: { supabase, safeGetSession 
         .eq('transaction_user', session?.user.id)
 
     if (error) {
-        return fail(Number(error.code), error)
+        return fail(400, error)
     }
     return { transactions }
 }

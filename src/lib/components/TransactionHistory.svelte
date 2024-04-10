@@ -39,7 +39,7 @@
       MYR {amount}
     </div>
     <div class="m-auto">
-      <a href="/edit"
+      <a href="transactions/edit/?Id={id}"
         ><button
           ><svg
             xmlns="http://www.w3.org/2000/svg"
