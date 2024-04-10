@@ -6,6 +6,7 @@
   export let views: number;
   export let likes: number;
   export let comments: number;
+  export let author:string;
 </script>
 
 <div class="rounded-[var(--card-border-radius)] shadowEffect">

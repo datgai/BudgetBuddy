@@ -3,6 +3,7 @@
   export let itemThumbnail: string | undefined = undefined;
   export let itemTitle: string;
   export let itemDescription: string;
+  export let itemId:number;
 </script>
 
 <div

@@ -52,8 +52,6 @@
 </svelte:head>
 
 <div>
-  <MobileHeader />
-
   <div>
     <h2 class="my-2 text-3xl font-bold">News</h2>
   </div>
