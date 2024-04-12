@@ -20,68 +20,130 @@
     PointElement,
     CategoryScale
   );
-  import type { PageData } from "./$types";
+  import type { PageData, PageLoad } from "./$types";
   import CategoryTotal from "$lib/components/CategoryTotal.svelte";
   import NoRecords from "$lib/components/NoRecords.svelte";
-
-  export let data: PageData;
-  let {
-    profile,
-    transactions,
-    balance,
-    incomeTotal,
-    incomeHistory,
-    expenseTotal,
-    expenseHistory,
-    categoryTotals,
-  } = data;
-  $: ({
-    profile,
-    transactions,
-    balance,
-    incomeTotal,
-    incomeHistory,
-    expenseTotal,
-    expenseHistory,
-    categoryTotals,
-  } = data);
-
-  export const incomeGraphData = {
-    labels: incomeHistory
-      ? [...Array(incomeHistory?.length).keys()].map((x) => ++x)
-      : [0, 0],
-    datasets: [
-      {
-        label: "Income",
-        fill: true,
-        data: incomeHistory ? incomeHistory.reverse() : [0, 0],
-        borderColor: "#00FF00",
-        backgroundColor: "#00FF00",
-      },
-    ],
-  };
-
-  export const expenseGraphData = {
-    labels: expenseHistory
-      ? [...Array(expenseHistory?.length).keys()].map((x) => ++x)
-      : [0, 0],
-    datasets: [
-      {
-        label: "Expense",
-        fill: true,
-        data:
-          expenseHistory && expenseHistory?.length > 0
-            ? expenseHistory.reverse()
-            : [0, 0],
-        borderColor: "#FF0000",
-        backgroundColor: "#FF0000",
-      },
-    ],
-  };
 
   const today = new Date();
   const year = today.getFullYear();
   const month = today.getMonth() + 1; // Months are zero-indexed
+
+  let startDate = new Date(year, month - 1, 1);
+  let endDate = new Date(year, month, 0);
+
+  export let data: PageData;
+  let { profile, transactions } = data;
+  $: ({ profile, transactions } = data);
+
+  let balance: number = 0;
+  let incomeHistory: number[] = [];
+  let incomeTotal: number = 0;
+  let expenseHistory: number[] = [];
+  let expenseTotal: number = 0;
+  let categoryTotals: { [category: string]: number } = {};
+
+  let incomeGraph: any;
+  let expenseGraph: any;
+  let incomeGraphData: {
+    labels: number[];
+    datasets: {
+      label: string;
+      fill: boolean;
+      data: number[];
+      borderColor: string;
+      backgroundColor: string;
+    }[];
+  };
+  let expenseGraphData: {
+    labels: number[];
+    datasets: {
+      label: string;
+      fill: boolean;
+      data: number[];
+      borderColor: string;
+      backgroundColor: string;
+    }[];
+  };
+
+  $: {
+    console.log("calculating totals");
+    balance = 0;
+    incomeHistory = [];
+    incomeTotal = 0;
+    expenseHistory = [];
+    expenseTotal = 0;
+    categoryTotals = {
+      paycheck: 0,
+      investments: 0,
+      savings: 0,
+      food: 0,
+      shopping: 0,
+      entertainment: 0,
+      rent: 0,
+      utilities: 0,
+      others: 0,
+    };
+
+    for (const transaction of transactions!) {
+      const transactionDateTime = new Date(transaction.transaction_datetime);
+      if (transaction.transaction_is_income) {
+        balance += transaction.transaction_amount;
+        if (
+          transactionDateTime >= new Date(startDate) &&
+          transactionDateTime <= new Date(endDate)
+        ) {
+          incomeTotal += transaction.transaction_amount;
+          incomeHistory.push(transaction.transaction_amount);
+        }
+      } else if (!transaction.transaction_is_income) {
+        balance -= transaction.transaction_amount;
+        if (
+          transactionDateTime >= new Date(startDate) &&
+          transactionDateTime <= new Date(endDate)
+        ) {
+          expenseTotal += transaction.transaction_amount;
+          expenseHistory.push(transaction.transaction_amount);
+        }
+      }
+      if (transaction.transaction_category in categoryTotals) {
+        categoryTotals[transaction.transaction_category] +=
+          transaction.transaction_amount;
+      }
+    }
+    incomeGraphData = {
+      labels:
+        incomeHistory.length > 0
+          ? [...Array(incomeHistory?.length).keys()].map((x) => ++x)
+          : [0, 0],
+      datasets: [
+        {
+          label: "Income",
+          fill: true,
+          data: incomeHistory ? incomeHistory.reverse() : [0, 0],
+          borderColor: "#00FF00",
+          backgroundColor: "#00FF00",
+        },
+      ],
+    };
+
+    expenseGraphData = {
+      labels: expenseHistory
+        ? [...Array(expenseHistory?.length).keys()].map((x) => ++x)
+        : [0, 0],
+      datasets: [
+        {
+          label: "Expense",
+          fill: true,
+          data:
+            expenseHistory && expenseHistory?.length > 0
+              ? expenseHistory.reverse()
+              : [0, 0],
+          borderColor: "#FF0000",
+          backgroundColor: "#FF0000",
+        },
+      ],
+    };
+  }
 </script>
 
 <svelte:head>
@@ -118,22 +180,18 @@
     </div>
   </div>
   <h2 class="my-2 text-3xl font-bold">
-    Data from
-    <form>
-      From: <input
-        type="date"
-        name="startDate"
-        value={new Date(year, month - 1, 1).toISOString().slice(0, 10)}
-        class="text-black"
-      />
-      To:<input
-        type="date"
-        name="endDate"
-        value={new Date(year, month, 0).toISOString().slice(0, 10)}
-        class="text-black"
-      />
-      <button type="submit">Display</button>
-    </form>
+    Data from From: <input
+      type="date"
+      name="startDate"
+      bind:value={startDate}
+      class="text-black"
+    />
+    To:<input
+      type="date"
+      name="endDate"
+      bind:value={endDate}
+      class="text-black"
+    />
   </h2>
 
   {#if transactions && transactions.length > 0}
@@ -162,6 +220,7 @@
               },
               responsive: true,
             }}
+            bind:chart={incomeGraph}
           />
         </div>
 
@@ -188,6 +247,7 @@
               },
               responsive: true,
             }}
+            bind:chart={expenseGraph}
           />
         </div>
       </div>
