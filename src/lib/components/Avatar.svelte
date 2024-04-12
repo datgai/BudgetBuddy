@@ -38,6 +38,6 @@
       width="{size}px"
     />
   {:else}
-    <div class="avatar no-image" style="height: {size}em; width: {size}em;" />
+    <div class="avatar no-image" style="height: {size}px; width: {size}px;" />
   {/if}
 </div>
