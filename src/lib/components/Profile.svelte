@@ -1,5 +1,7 @@
 <script lang="ts">
-  import person_picture from "$lib/images/Person.png";
+  import type { SupabaseClient } from "@supabase/supabase-js";
+  import Avatar from "./Avatar.svelte";
+  export let supabase: SupabaseClient;
   export let profile: any;
 </script>
 
@@ -17,12 +19,7 @@
       </p>
     </div>
     <div class="mx-2 justify-end">
-      <img
-        height="40"
-        width="40"
-        class="rounded-full border-2 border-indigo-500"
-        src={person_picture}
-      />
+      <Avatar {supabase} url={profile?.avatar_url} size={50}></Avatar>
     </div>
   {:else}
     <div class="flex-1 flex-row mx-2 my-auto">

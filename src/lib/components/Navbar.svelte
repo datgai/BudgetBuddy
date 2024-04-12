@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { SupabaseClient } from "@supabase/supabase-js";
+  export let supabase: SupabaseClient;
   import { page } from "$app/stores";
   import Profile from "./Profile.svelte";
   export let profile: any;
@@ -39,7 +41,6 @@
 
     <a
       href="../news"
-
       class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
       <svg
@@ -62,7 +63,6 @@
     >
     <a
       href="../forums"
-
       class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
       <svg
@@ -84,7 +84,6 @@
     >
     <a
       href="../resources"
-
       class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +105,6 @@
     >
     <a
       href="../tasks"
-
       class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
       <svg
@@ -129,6 +127,6 @@
     >
   </div>
   <div class="invisible md:visible mx-4">
-    <Profile {profile} />
+    <Profile {supabase} {profile} />
   </div>
 </nav>

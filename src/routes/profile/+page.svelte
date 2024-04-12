@@ -1,26 +1,14 @@
 <script lang="ts">
-  import person_picture from "$lib/images/Person.png";
   import { enhance } from "$app/forms";
+  import Avatar from "$lib/components/Avatar.svelte";
   import type { SubmitFunction } from "@sveltejs/kit";
 
   export let data;
-  export let form;
 
-  let { session, supabase, profile } = data;
-  $: ({ session, supabase, profile } = data);
+  let { session, supabase, user, profile } = data;
+  $: ({ session, supabase, user, profile } = data);
 
-  let profileForm: HTMLFormElement;
   let loading = false;
-  let username: string = profile?.username ?? "";
-  let phoneNumber: string = profile?.phone_number ?? "";
-  let avatarUrl: string = profile?.avatar_url ?? "";
-
-  const handleSubmit: SubmitFunction = () => {
-    loading = true;
-    return async () => {
-      loading = false;
-    };
-  };
 
   const handleSignOut: SubmitFunction = () => {
     loading = true;
@@ -36,7 +24,7 @@
 </svelte:head>
 
 <header>
-  <div>
+  <div class="flex mt-4 py-2">
     <a href="/" class="">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -60,18 +48,36 @@
 <div
   class="shadowEffect flex flex-col mx-2 my-4 px-2 py-6 cardGradientBackgroundSecond rounded-[var(--card-border-radius)]"
 >
+  <a href="profile/edit/?Id={user?.id}" class="ml-auto mr-2"
+    ><button
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-edit"
+        width="30"
+        height="30"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="#00abfb"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+        <path
+          d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"
+        />
+        <path d="M16 5l3 3" />
+      </svg></button
+    ></a
+  >
   <div class="mx-auto">
-    <img
-      height="250"
-      width="250"
-      class="rounded-full border-4 border-indigo-500"
-      src={person_picture}
-    />
+    <Avatar {supabase} url={profile?.avatar_url} size={250}></Avatar>
   </div>
   <div class=" my-2 mx-auto">
     <p class="font-bold text-xl text-[var(--color-text)] truncate text-center">
-      {username}
-      {phoneNumber}
+      {profile?.username}
+      {profile?.phone_number}
     </p>
     <p class="truncate text-xl text-[var(--color-text-inactive)] text-center">
       {session?.user.email}

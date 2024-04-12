@@ -1,32 +1,19 @@
 <script lang="ts">
+  import { incomeCategories, expenseCategories } from "$lib/utils/utils";
   export let data;
-  let { profile, transactions } = data;
+  let { transactions } = data;
+  let selectOptions: typeof incomeCategories | typeof expenseCategories;
 
-  interface Option {
-    value: string;
-    label: string;
-  }
-  let selectOptions: Option[];
   export let isIncome: boolean = transactions[0].transaction_is_income;
 
   $: {
     if (isIncome) {
-      selectOptions = [
-        { value: "paycheck", label: "Paycheck" },
-        { value: "investments", label: "Investments" },
-        { value: "savings", label: "Savings " },
-      ];
+      selectOptions = incomeCategories;
     } else {
-      selectOptions = [
-        { value: "food", label: "Food" },
-        { value: "shopping", label: "Shopping" },
-        { value: "entertainment", label: "Entertainment" },
-        { value: "rent", label: "Rent" },
-        { value: "utilities", label: "Utilities" },
-        { value: "others", label: "Others" },
-      ];
+      selectOptions = expenseCategories;
     }
   }
+
   import CurrencyInput from "@canutin/svelte-currency-input";
 </script>
 
@@ -74,12 +61,8 @@
       <div>
         <label for="transactionCategory">Transaction Category: </label>
         <select name="transactionCategory">
-          {#each selectOptions as option}
-            {#if transactions[0].transaction_category === option.value}
-              <option value={option.value} selected>{option.label}</option>
-            {:else}
-              <option value={option.value}>{option.label}</option>
-            {/if}
+          {#each Object.entries(selectOptions) as [category, label]}
+            <option value={category}>{label}</option>
           {/each}
         </select>
       </div>
