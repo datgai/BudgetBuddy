@@ -1,10 +1,23 @@
 <script>
+  import { Line } from "svelte-chartjs";
   import TransactionHistory from "$lib/components/TransactionHistory.svelte";
   import amazon_icon from "$lib/images/amazon.jpg";
-  import BalanceGraph from "$lib/components/BalanceGraph.svelte";
 
   export let data;
   let { profile, transactions } = data;
+
+  export const balanceGraphData = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+      {
+        label: "Balance",
+        fill: true,
+        data: [65, 59, 80, 81, 56, 55, 40],
+        borderColor: "#00FF00",
+        backgroundColor: "#00FF00",
+      },
+    ],
+  };
 </script>
 
 <svelte:head>
@@ -21,7 +34,25 @@
     <div
       class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
     >
-      <BalanceGraph />
+      <Line
+        data={balanceGraphData}
+        options={{
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          scales: {
+            y: {
+              display: false,
+            },
+            x: {
+              display: false,
+            },
+          },
+          responsive: true,
+        }}
+      />
       <div class="flex">
         <div class="flex-1"></div>
         <a href="/transactions/new"

@@ -1,6 +1,5 @@
 <script lang="ts">
-  import IncomeGraph from "$lib/components/IncomeGraph.svelte";
-  import ExpenseGraph from "$lib/components/ExpenseGraph.svelte";
+  import { Line } from "svelte-chartjs";
   import type { PageData } from "./$types";
   import CategoryTotal from "$lib/components/CategoryTotal.svelte";
 
@@ -25,6 +24,32 @@
     expenseHistory,
     categoryTotals,
   } = data);
+
+  export const incomeGraphData = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+      {
+        label: "Income",
+        fill: true,
+        data: [65, 59, 80, 81, 56, 55, 40],
+        borderColor: "#00FF00",
+        backgroundColor: "#00FF00",
+      },
+    ],
+  };
+
+  export const expenseGraphData = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+      {
+        label: "Expense",
+        fill: true,
+        data: [28, 48, 40, 19, 86, 27, 90],
+        borderColor: "#FF0000",
+        backgroundColor: "#FF0000",
+      },
+    ],
+  };
 </script>
 
 <svelte:head>
@@ -68,7 +93,25 @@
     >
       <h2 class="mb-8 text-xl font-bold">MYR {incomeTotal?.toFixed(2)}</h2>
       <h1 class="font-bold">Income</h1>
-      <IncomeGraph />
+      <Line
+        data={incomeGraphData}
+        options={{
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          scales: {
+            y: {
+              display: false,
+            },
+            x: {
+              display: false,
+            },
+          },
+          responsive: true,
+        }}
+      />
     </div>
 
     <div
@@ -76,7 +119,25 @@
     >
       <h2 class="mb-8 text-xl font-bold">MYR {expenseTotal?.toFixed(2)}</h2>
       <h1 class="font-bold">Expenses</h1>
-      <ExpenseGraph />
+      <Line
+        data={expenseGraphData}
+        options={{
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          scales: {
+            y: {
+              display: false,
+            },
+            x: {
+              display: false,
+            },
+          },
+          responsive: true,
+        }}
+      />
     </div>
   </div>
   <h2 class="my-4 text-3xl font-bold">Categories</h2>
