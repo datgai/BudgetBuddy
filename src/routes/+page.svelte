@@ -1,30 +1,149 @@
 <script lang="ts">
-  import IncomeGraph from "$lib/components/IncomeGraph.svelte";
-  import ExpenseGraph from "$lib/components/ExpenseGraph.svelte";
-  import type { PageData } from "./$types";
+  import { Line } from "svelte-chartjs";
+  import {
+    Chart as ChartJS,
+    Title,
+    Tooltip,
+    Legend,
+    LineElement,
+    LinearScale,
+    PointElement,
+    CategoryScale,
+  } from "chart.js";
+
+  ChartJS.register(
+    Title,
+    Tooltip,
+    Legend,
+    LineElement,
+    LinearScale,
+    PointElement,
+    CategoryScale
+  );
+  import type { PageData, PageLoad } from "./$types";
   import CategoryTotal from "$lib/components/CategoryTotal.svelte";
+  import NoRecords from "$lib/components/NoRecords.svelte";
+
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1; // Months are zero-indexed
+
+  let startDate = new Date(year, month - 1, 1);
+  let endDate = new Date(year, month, 0);
 
   export let data: PageData;
-  let {
-    profile,
-    balance,
-    balanceHistory,
-    incomeTotal,
-    incomeHistory,
-    expenseTotal,
-    expenseHistory,
-    categoryTotals,
-  } = data;
-  $: ({
-    profile,
-    balance,
-    balanceHistory,
-    incomeTotal,
-    incomeHistory,
-    expenseTotal,
-    expenseHistory,
-    categoryTotals,
-  } = data);
+  let { profile, transactions } = data;
+  $: ({ profile, transactions } = data);
+
+  let balance: number = 0;
+  let incomeHistory: number[] = [];
+  let incomeTotal: number = 0;
+  let expenseHistory: number[] = [];
+  let expenseTotal: number = 0;
+  let categoryTotals: { [category: string]: number } = {};
+
+  let incomeGraph: any;
+  let expenseGraph: any;
+  let incomeGraphData: {
+    labels: number[];
+    datasets: {
+      label: string;
+      fill: boolean;
+      data: number[];
+      borderColor: string;
+      backgroundColor: string;
+    }[];
+  };
+  let expenseGraphData: {
+    labels: number[];
+    datasets: {
+      label: string;
+      fill: boolean;
+      data: number[];
+      borderColor: string;
+      backgroundColor: string;
+    }[];
+  };
+
+  $: {
+    console.log("calculating totals");
+    balance = 0;
+    incomeHistory = [];
+    incomeTotal = 0;
+    expenseHistory = [];
+    expenseTotal = 0;
+    categoryTotals = {
+      paycheck: 0,
+      investments: 0,
+      savings: 0,
+      food: 0,
+      shopping: 0,
+      entertainment: 0,
+      rent: 0,
+      utilities: 0,
+      others: 0,
+    };
+
+    for (const transaction of transactions!) {
+      const transactionDateTime = new Date(transaction.transaction_datetime);
+      if (transaction.transaction_is_income) {
+        balance += transaction.transaction_amount;
+        if (
+          transactionDateTime >= new Date(startDate) &&
+          transactionDateTime <= new Date(endDate)
+        ) {
+          incomeTotal += transaction.transaction_amount;
+          incomeHistory.push(transaction.transaction_amount);
+        }
+      } else if (!transaction.transaction_is_income) {
+        balance -= transaction.transaction_amount;
+        if (
+          transactionDateTime >= new Date(startDate) &&
+          transactionDateTime <= new Date(endDate)
+        ) {
+          expenseTotal += transaction.transaction_amount;
+          expenseHistory.push(transaction.transaction_amount);
+        }
+      }
+      if (transaction.transaction_category in categoryTotals) {
+        categoryTotals[transaction.transaction_category] +=
+          transaction.transaction_amount;
+      }
+    }
+    incomeGraphData = {
+      labels:
+        incomeHistory.length > 0
+          ? [...Array(incomeHistory?.length).keys()].map((x) => ++x)
+          : [0, 0],
+      datasets: [
+        {
+          label: "Income",
+          fill: true,
+          data: incomeHistory ? incomeHistory.reverse() : [0, 0],
+          borderColor: "#00FF00",
+          backgroundColor: "#00FF00",
+        },
+      ],
+    };
+
+    expenseGraphData = {
+      labels: expenseHistory
+        ? [...Array(expenseHistory?.length).keys()].map((x) => ++x)
+        : [0, 0],
+      datasets: [
+        {
+          label: "Expense",
+          fill: true,
+          data:
+            expenseHistory && expenseHistory?.length > 0
+              ? expenseHistory.reverse()
+              : [0, 0],
+          borderColor: "#FF0000",
+          backgroundColor: "#FF0000",
+        },
+      ],
+    };
+  }
 </script>
 
 <svelte:head>
@@ -35,7 +154,6 @@
 <div>
   <div>
     <h2 class="my-2 text-3xl font-bold">{profile?.username}'s Dashboard</h2>
-    <h2 class="my-2 text-3xl font-bold">Current Month</h2>
   </div>
 
   <div
@@ -61,36 +179,84 @@
       </a>
     </div>
   </div>
+  <h2 class="my-2 text-3xl font-bold">
+    Data from From: <input
+      type="date"
+      name="startDate"
+      bind:value={startDate}
+      class="text-black"
+    />
+    To:<input
+      type="date"
+      name="endDate"
+      bind:value={endDate}
+      class="text-black"
+    />
+  </h2>
 
-  <div class="flex flex-row">
-    <div
-      class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
-    >
-      <h2 class="mb-8 text-xl font-bold">MYR {incomeTotal?.toFixed(2)}</h2>
-      <h1 class="font-bold">Income</h1>
-      <IncomeGraph />
+  {#if transactions && transactions.length > 0}
+    <div>
+      <div class="flex flex-col md:flex-row">
+        <div
+          class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2 md:mx-1"
+        >
+          <h2 class="mb-8 text-xl font-bold">MYR {incomeTotal?.toFixed(2)}</h2>
+          <h1 class="font-bold">Income</h1>
+          <Line
+            data={incomeGraphData}
+            options={{
+              plugins: {
+                legend: {
+                  display: false,
+                },
+              },
+              scales: {
+                y: {
+                  display: false,
+                },
+                x: {
+                  display: false,
+                },
+              },
+              responsive: true,
+            }}
+            bind:chart={incomeGraph}
+          />
+        </div>
+
+        <div
+          class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2 md:mx-1"
+        >
+          <h2 class="mb-8 text-xl font-bold">MYR {expenseTotal?.toFixed(2)}</h2>
+          <h1 class="font-bold">Expenses</h1>
+          <Line
+            data={expenseGraphData}
+            options={{
+              plugins: {
+                legend: {
+                  display: false,
+                },
+              },
+              scales: {
+                y: {
+                  display: false,
+                },
+                x: {
+                  display: false,
+                },
+              },
+              responsive: true,
+            }}
+            bind:chart={expenseGraph}
+          />
+        </div>
+      </div>
+      <h2 class="my-4 text-3xl font-bold">Categories</h2>
+      {#each Object.entries(categoryTotals) as [category, categoryTotal]}
+        {#if categoryTotal > 0}
+          <CategoryTotal {category} amount={Number(categoryTotal).toFixed(2)} />
+        {/if}{/each}
     </div>
-
-    <div
-      class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 mx-1"
-    >
-      <h2 class="mb-8 text-xl font-bold">MYR {expenseTotal?.toFixed(2)}</h2>
-      <h1 class="font-bold">Expenses</h1>
-      <ExpenseGraph />
-    </div>
-  </div>
-  <h2 class="my-4 text-3xl font-bold">Categories</h2>
-
-  {#if categoryTotals}
-    {#each Object.entries(categoryTotals) as [category, categoryTotal]}
-      {#if categoryTotal > 0}
-        <CategoryTotal {category} amount={Number(categoryTotal).toFixed(2)} />
-      {/if}{/each}
   {:else}
-    <p>
-      Oh no! looks like your records empty! go and <a href="/transactions/new"
-        >record a transaction now!</a
-      >
-    </p>
-  {/if}
+    <NoRecords />{/if}
 </div>

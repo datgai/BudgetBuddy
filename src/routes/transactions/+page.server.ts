@@ -7,10 +7,26 @@ export const load: PageServerLoad = async ({ locals: { supabase, safeGetSession 
         .from('transactions')
         .select('id,transaction_datetime,transaction_is_income,transaction_category,transaction_amount,transaction_description')
         .eq('transaction_user', session?.user.id)
-        .order('transaction_datetime', { ascending: false })
+        .order('transaction_datetime', { ascending: true })
 
     if (error) {
         return fail(400, error)
+    }
+    if (transactions) {
+        let balance: number = 0
+        let balanceHistory: number[] = [];
+        for (const transaction of transactions) {
+            if (transaction.transaction_is_income) {
+                balance += transaction.transaction_amount
+                balanceHistory.push(balance)
+            } else if (!transaction.transaction_is_income) {
+                balance -= transaction.transaction_amount
+                balanceHistory.push(balance)
+            }
+        }
+        return {
+            balanceHistory, transactions
+        }
     }
     return { transactions }
 }
