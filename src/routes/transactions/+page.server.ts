@@ -7,6 +7,7 @@ export const load: PageServerLoad = async ({ locals: { supabase, safeGetSession 
         .from('transactions')
         .select('id,transaction_datetime,transaction_is_income,transaction_category,transaction_amount,transaction_description')
         .eq('transaction_user', session?.user.id)
+        .order('transaction_datetime', { ascending: false })
 
     if (error) {
         return fail(400, error)
