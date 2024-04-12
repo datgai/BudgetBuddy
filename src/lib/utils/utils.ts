@@ -32,3 +32,18 @@ export function truncateNumber(num: number): string {
         return num.toString();
     }
 }
+
+export enum incomeCategories {
+    paycheck = "Paycheck",
+    investment = "Investment",
+    savings = "Savings"
+}
+
+export enum expenseCategories {
+    food = "Food",
+    shopping = "Shopping",
+    entertainment = "Entertainment",
+    rent = "Rent",
+    utilities = "Utilities",
+    others = "Others"
+}

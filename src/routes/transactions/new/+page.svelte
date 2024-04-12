@@ -1,27 +1,14 @@
 <script lang="ts">
-  interface Option {
-    value: string;
-    label: string;
-  }
-  let selectOptions: Option[];
+  import { incomeCategories, expenseCategories } from "$lib/utils/utils";
+
+  let selectOptions: typeof incomeCategories | typeof expenseCategories;
   export let isIncome: boolean = false;
 
   $: {
     if (isIncome) {
-      selectOptions = [
-        { value: "paycheck", label: "Paycheck" },
-        { value: "investments", label: "Investments" },
-        { value: "savings", label: "Savings " },
-      ];
+      selectOptions = incomeCategories;
     } else {
-      selectOptions = [
-        { value: "food", label: "Food" },
-        { value: "shopping", label: "Shopping" },
-        { value: "entertainment", label: "Entertainment" },
-        { value: "rent", label: "Rent" },
-        { value: "utilities", label: "Utilities" },
-        { value: "others", label: "Others" },
-      ];
+      selectOptions = expenseCategories;
     }
   }
   import CurrencyInput from "@canutin/svelte-currency-input";
@@ -70,8 +57,8 @@
     <div>
       <label for="transactionCategory">Transaction Category: </label>
       <select name="transactionCategory">
-        {#each selectOptions as option}
-          <option value={option.value}>{option.label}</option>
+        {#each Object.entries(selectOptions) as [category, label]}
+          <option value={category}>{label}</option>
         {/each}
       </select>
     </div>
