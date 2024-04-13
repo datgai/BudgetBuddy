@@ -7,11 +7,19 @@
   import { onMount } from "svelte";
   import { page } from "$app/stores";
   import MobileHeader from "$lib/components/MobileHeader.svelte";
+  import { getContext } from 'svelte';
+
+  let showMobileHeader: boolean;
 
   export let data: LayoutData;
-
   let { supabase, session, profile } = data;
   $: ({ supabase, session, profile } = data);
+
+  $: {
+    const currentPath = $page.url.pathname;
+    const isNotNumericEnd = /[^\d]+$/.test(currentPath);
+    showMobileHeader = isNotNumericEnd;
+  }
 
   onMount(() => {
     const { data } = supabase.auth.onAuthStateChange((event, _session) => {
@@ -31,7 +39,9 @@
 <div class="app">
   <Navbar {supabase} {profile} />
   <main class="md:px-6 p-4">
+    {#if showMobileHeader}
     <MobileHeader {supabase} {profile} />
+    {/if}
     <slot />
   </main>
 
