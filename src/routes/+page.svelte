@@ -32,8 +32,8 @@
   let endDate = new Date(year, month, 0);
 
   export let data: PageData;
-  let { profile, transactions } = data;
-  $: ({ profile, transactions } = data);
+  let { profile, transactions, advice } = data;
+  $: ({ profile, transactions, advice } = data);
 
   let balance: number = 0;
   let incomeHistory: number[] = [];
@@ -66,7 +66,6 @@
   };
 
   $: {
-    console.log("calculating totals");
     balance = 0;
     incomeHistory = [];
     incomeTotal = 0;
@@ -119,7 +118,7 @@
         {
           label: "Income",
           fill: true,
-          data: incomeHistory ? incomeHistory.reverse() : [0, 0],
+          data: incomeHistory.length > 0 ? incomeHistory : [0, 0],
           borderColor: "#00FF00",
           backgroundColor: "#00FF00",
         },
@@ -127,17 +126,15 @@
     };
 
     expenseGraphData = {
-      labels: expenseHistory
-        ? [...Array(expenseHistory?.length).keys()].map((x) => ++x)
-        : [0, 0],
+      labels:
+        expenseHistory?.length > 0
+          ? [...Array(expenseHistory?.length).keys()].map((x) => ++x)
+          : [0, 0],
       datasets: [
         {
           label: "Expense",
           fill: true,
-          data:
-            expenseHistory && expenseHistory?.length > 0
-              ? expenseHistory.reverse()
-              : [0, 0],
+          data: expenseHistory?.length > 0 ? expenseHistory : [0, 0],
           borderColor: "#FF0000",
           backgroundColor: "#FF0000",
         },
@@ -160,6 +157,7 @@
     class="flex flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-3"
   >
     <h2 class="mb-8 text-2xl font-bold">Available Balance</h2>
+    {advice}
     <h1 class="text-3xl font-bold">MYR {balance?.toFixed(2)}</h1>
     <div class="flex flex-row mx-2">
       <a href="transactions" class="flex-1 my-auto">See details</a>

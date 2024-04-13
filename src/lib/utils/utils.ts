@@ -35,7 +35,7 @@ export function truncateNumber(num: number): string {
 
 export enum incomeCategories {
     paycheck = "Paycheck",
-    investment = "Investment",
+    investments = "Investments",
     savings = "Savings"
 }
 
