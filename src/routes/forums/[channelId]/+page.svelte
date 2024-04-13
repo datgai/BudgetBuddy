@@ -5,29 +5,86 @@
   import send from "$lib/images/send.png"; // Importing send image
   import personProfile from "$lib/images/Person.png"; // Importing default profile image
   import { supabase } from "../../../main"; // Importing supabase client instance
-  import { scrollToBottom, formatTime, type Message } from "./page";
   import { page } from "$app/stores";
+  import { onMount, setContext } from "svelte";
+
+  export let data;
+  let {session} = data;
   const channelId = $page.params.channelId;
 
   // Array to store fetched messages
   let messages: Message[] = [];
-
+  let userIdToUsernameMap: Map<any, string> = new Map();
   // Variable to store new message input
   let newMessageText = "";
 
+  setContext('showMobileHeader', false);
+  
+  
+// Interface for message object
+  interface Message {
+    user_id: string | undefined;
+    id: number;
+    text: string;
+    user_name: string;
+    created_at: string;
+    profile?: string;
+  }
+  
+  
+  // Function to scroll to the bottom of messages container
+async function scrollToBottom() {
+  try {
+    const messagesContainer = document.querySelector('.messages-container');
+    if (messagesContainer) {
+      // Wait for a short delay to ensure messages are rendered before scrolling
+      await new Promise(resolve => setTimeout(resolve, 100));
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+  } catch (error) {
+    console.error('Error scrolling to bottom:', error);
+  }
+}
+  
+  // Function to format message timestamp
+  function formatTime(timestamp: string): string {
+  const messageTime = new Date(timestamp);
+  const currentTime = new Date();
+  const diff = Math.floor((currentTime.getTime() - messageTime.getTime()) / 1000); 
+  
+  if (diff < 60) {
+    return 'just now';
+  } else if (diff < 3600) {
+    const minutes = Math.floor(diff / 60);
+    return `${minutes} min${minutes > 1 ? 's' : ''} ago`;
+  } else if (diff < 24 * 3600) {
+    const hours = Math.floor(diff / 3600);
+    return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+  } else {
+    const day = messageTime.getDate();
+    const month = messageTime.getMonth() + 1;
+    const year = messageTime.getFullYear() % 100;
+    const hours = messageTime.getHours();
+    const minutes = messageTime.getMinutes() < 10 ? '0' + messageTime.getMinutes() : messageTime.getMinutes();
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+    return `${month}/${day}/${year} ${formattedHours}:${minutes}${ampm}`;
+  }
+  }
+
   // Function to fetch messages from database
   async function fetchMessages() {
-    const { data, error } = await supabase
-      .from("messages")
-      .select("*")
-      .eq("channel_id", channelId)
-      .order("msg_id", { ascending: true });
-    if (error) {
-      console.error("Error fetching messages:", error.message);
-    } else {
-      messages = data;
-    }
+  const { data, error } = await supabase
+    .from("messages")
+    .select("*")
+    .eq("channel_id", channelId)
+    .order("msg_id", { ascending: true });
+  if (error) {
+    console.error("Error fetching messages:", error.message);
+  } else {
+    messages = data;
   }
+}
 
   async function fetchForumTitle() {
     const { data, error } = await supabase
@@ -44,21 +101,47 @@
   }
 
   // Function to post a new message to the database
-  async function postMessage(text: string, userName: string) {
+  async function postMessage(text: string, user_id: any) {
     const { data, error } = await supabase
       .from("messages")
-      .insert([{ channel_id: channelId, text, user_name: userName }]);
+      .insert([{ channel_id: channelId, text, user_id: user_id }]);
     if (error) {
       console.error("Error posting message:", error.message);
     } else {
-      await fetchMessages(); // Fetch updated messages
+      fetchMessages().then(async () => {
       newMessageText = ""; // Clear new message input
-      scrollToBottom(); // Scroll to bottom to show new message
+      await scrollToBottom(); // Scroll to bottom after messages are fetched
+});
     }
   }
 
+  async function getUserName(user_id: any): Promise<string | null> {
+  if (userIdToUsernameMap.has(user_id)) {
+    return userIdToUsernameMap.get(user_id) || null;
+  }
+
+  const { data, error } = await supabase
+    .from("profiles")
+    .select("username")
+    .eq("id", user_id)
+    .single();
+
+  if (error) {
+    console.error("Error fetching username:", error.message);
+    return null;
+  } else {
+    const username = data?.username || "Unknown";
+    userIdToUsernameMap.set(user_id, username);
+    return username;
+  }
+}
+
   // Fetch messages when the component mounts
   fetchMessages();
+  Promise.all([fetchMessages(), Promise.all(messages.map(message => getUserName(message.user_id)))])
+  .then(() => {
+    scrollToBottom(); // Scroll to bottom after messages and usernames are fetched
+  });
 </script>
 
 <div class="-m-4 md:-m-6">
@@ -84,14 +167,18 @@
   <div class="flex flex-col h-[77vh] bg-gray-100 justify-between">
     <div class="p-4 space-y-4 bg-gray-100 overflow-auto messages-container">
       {#each messages as message}
+      {#await getUserName(message.user_id) then username}
         <MessageItem
-          userName={message.user_name}
           text={message.text}
-          user={message.user_name !== "John"}
+          user={message.user_id !== session?.user.id}
           time={formatTime(message.created_at)}
           profile={message.profile || personProfile}
+          username={username}
         />
-      {/each}
+      {:catch error}
+        <p>Error: {error.message}</p>
+      {/await}
+    {/each}
     </div>
   </div>
 
@@ -108,7 +195,8 @@
     {#if newMessageText !== ""}
       <button
         on:click={() => {
-          postMessage(newMessageText, "John");
+          postMessage(newMessageText, session?.user.id);
+
         }}
         class="h-[45px] w-[45px] bg-blue-600 p-2.5 rounded-[50%]"
       >
