@@ -56,7 +56,7 @@
 
     <div>
       <label for="transactionCategory">Transaction Category: </label>
-      <select name="transactionCategory">
+      <select name="transactionCategory" class="text-black">
         {#each Object.entries(selectOptions) as [category, label]}
           <option value={category}>{label}</option>
         {/each}
@@ -72,12 +72,20 @@
         currency="MYR"
         required
         isNegativeAllowed={false}
+        inputClasses={
+          { 
+            wrapper: "form-control block",
+            formatted: 'py-1.5 text-grey-700',
+            formattedPositive: 'text-green-700',
+            formattedNegative: 'text-red-700'
+          }
+        }
       />
     </div>
 
     <div>
       Transaction Description:
-      <input type="text" name="transactionDescription" />
+      <input type="text" name="transactionDescription" class="text-black pb-0 pt-[17px] bg-[var(--color-theme-1)] gradientBackground" />
     </div>
     <button
       type="submit"
