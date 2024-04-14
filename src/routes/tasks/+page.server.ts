@@ -8,3 +8,5 @@ export const load: PageServerLoad = async ({ parent }) => {
         throw redirect(303, '/login')
     }
 }
+
+
