@@ -7,6 +7,14 @@
   let weeklyTasks: any[] = [];
   let monthlyTasks: any[] = [];
 
+  export let data;
+  let {session} = data;
+  console.log(session?.user.id)
+  
+
+
+
+
   onMount(async () => {
     await fetchTasks();
   });
