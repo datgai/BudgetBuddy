@@ -1,7 +1,8 @@
 // src/main.ts
+import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = 'https://ihiyzkhbmnwmirtcmbva.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImloaXl6a2hibW53bWlydGNtYnZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTIzMTI5NzUsImV4cCI6MjAyNzg4ODk3NX0.lQlx5tGKS-MDd5JKj-mKAMs9QubomfkRHxhv2fU_4TE';
+const supabaseUrl = PUBLIC_SUPABASE_URL;
+const supabaseKey = PUBLIC_SUPABASE_ANON_KEY;
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
