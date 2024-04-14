@@ -72,15 +72,15 @@
     <img
       src={avatarUrl}
       alt={avatarUrl ? "Avatar" : "No image"}
-      class="avatar image"
-      style="height: {size}em; width: {size}em;"
+      class="avatar image rounded-full object-cover"
+      style="height: {size}em; width: {size}em;" 
     />
   {:else}
-    <div class="avatar no-image" style="height: {size}em; width: {size}em;" />
+    <div class="avatar no-image object-cover" style="height: {size}em; width: {size}em;" />
   {/if}
   <input type="hidden" name="avatarUrl" value={url} />
 
-  <div style="width: {size}em;">
+  <div style="height: {size}em; width: {size}em;" >
     <label class="button primary block" for="single">
       {uploading ? "Uploading ..." : "Upload"}
     </label>

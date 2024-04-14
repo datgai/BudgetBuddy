@@ -4,7 +4,6 @@
   export let time: string;
   export let profile: any;
   export let username:any;
-  import personProfile from "$lib/images/Person.png";
   import { supabase } from "../../main";
   import Avatar from "./Avatar.svelte"
 
@@ -12,7 +11,7 @@
 
 <div class="{user ? 'justify-start' : 'justify-end'} flex w-full mt-2 space-x-3">
   {#if user}
-    <img class="flex-shrink-0 h-10 w-10 rounded-full object-cover" src={profile} alt="" />
+       <Avatar {supabase} url={profile} size={42}></Avatar>
   {/if}
   <div class="flex flex-col max-w-xl">
     <p class="text-xs text-black {user ? '' : 'text-right'}">{username}</p>
@@ -22,6 +21,8 @@
     <span class="text-xs text-gray-500 {user ? '' : 'text-right'}">{time}</span>
   </div>
   {#if !user}
-    <img class="flex-shrink-0 h-10 w-10 rounded-full object-cover" src={personProfile} alt="" />
+    <div class="flex-shrink-0 h-10 w-10 rounded-full object-cover">
+      <Avatar {supabase} url={profile} size={42}></Avatar>
+    </div>
   {/if}
 </div>
