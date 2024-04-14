@@ -29,12 +29,11 @@
 </script>
 
 <div>
-  <img
-    src={avatarUrl ||
-      "https://ihiyzkhbmnwmirtcmbva.supabase.co/storage/v1/object/sign/avatars/BudgetBuddy.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL0J1ZGdldEJ1ZGR5LnBuZyIsImlhdCI6MTcxMzAwOTA1NCwiZXhwIjoxOTY1Mjk3MDU0fQ.B88Wr0Lg95jGIAlstu2gt4pfcfFnkArnYjQqfHbJe30&t=2024-04-13T11%3A50%3A54.376Z"}
-    alt={avatarUrl ? "Avatar" : "No image"}
-    class="rounded-full border-4 border-indigo-500"
-    height="{size}px"
-    width="{size}px"
-  />
+<img
+  src={avatarUrl ||
+    "https://ihiyzkhbmnwmirtcmbva.supabase.co/storage/v1/object/sign/avatars/BudgetBuddy.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL0J1ZGdldEJ1ZGR5LnBuZyIsImlhdCI6MTcxMzAwOTA1NCwiZXhwIjoxOTY1Mjk3MDU0fQ.B88Wr0Lg95jGIAlstu2gt4pfcfFnkArnYjQqfHbJe30&t=2024-04-13T11%3A50%3A54.376Z"}
+  alt={avatarUrl ? "Avatar" : "No image"}
+  class="object-cover border-2 border-indigo-500	"
+  style="height: {size}px; width: {size}px; border-radius: 50%"
+/>
 </div>
