@@ -4,7 +4,9 @@
   import leftarrow from "$lib/images/arrow.png";
   import { page } from "$app/stores";
   import type { Article } from "./page";
-
+  export let data;
+  let { session } = data;
+  
   const articleId = $page.params.articleId;
   let article: Article;
   let isLoading = true;
@@ -28,19 +30,22 @@
     }
   }
   const handleClick = async () => {
-    const { data, error } = await supabase
-      .from("tasks")
-      .update({ isCompleted: true })
-      .eq("id", 2);
+    const { error } = await supabase
+        .from('tasks')
+        .update({ 'isCompleted': true })
+        .eq('taskuser', session?.user.id)
+        .eq('taskid', 2);
 
     if (error) {
-      console.error("Error updating user:", error.message);
-    } else {
+        console.error(error);
+    }else {
       window.location.href = "/tasks";
     }
-  };
+}
 
   onMount(fetchArticle);
+
+
 </script>
 
 {#if isLoading}
