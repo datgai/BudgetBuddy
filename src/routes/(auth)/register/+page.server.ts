@@ -1,6 +1,11 @@
 import { fail } from "@sveltejs/kit";
 import type { Actions } from "../$types";
 import { supabase } from "../../../main";
+// import { fetchUserId } from "./+page";
+import type { PageServerLoad } from './$types'
+
+
+
 
 export const actions: Actions = {
     register: async ({ request, locals: { supabase, safeGetSession } }) => {
@@ -10,6 +15,7 @@ export const actions: Actions = {
         const userPhone = formData.get('userPhone') as string;
         const userName = formData.get('userName') as string;
         const avatarUrl = formData.get('avatarUrl') as string;
+        const { session } = await safeGetSession();
 
         const { data: signUpData, error: signUpError } = await supabase.auth.signUp(
             {
@@ -30,15 +36,7 @@ export const actions: Actions = {
             return fail(500, { data: signUpData });
         }
 
-        const { session } = await safeGetSession();
-        console.log(session);
-
-        // for (let i = 1; i <= 9; i++) {
-        //     await supabase
-        //         .from("tasks")
-        //         .insert([{ taskId: i, taskuser: session?.user.id, isCompleted: false }]);
-        // }
-
         return { data: signUpData };
     }
 };
+

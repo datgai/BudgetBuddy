@@ -3,48 +3,81 @@
   import { supabase } from "../../main";
   import TaskItem from "$lib/components/TaskItem.svelte";
 
-  let dailyTasks: any[] = [];
-  let weeklyTasks: any[] = [];
-  let monthlyTasks: any[] = [];
+  let dailyMissions: any[] = [];
+  let weeklyMissions: any[] = [];
+  let monthlyMissions: any[] = [];
+  
+  // Object to store task statuses
+  let taskStatuses: { [key: number]: boolean } = {};
 
   export let data;
-  let {session} = data;
-  console.log(session?.user.id)
+  let { session } = data;
   
 
 
 
-
   onMount(async () => {
-    await fetchTasks();
+    await fetchmission();
+    // Fetch statuses for all tasks
+    await fetchTaskStatuses();
+
   });
 
   onDestroy(() => {
     // Clean up if needed
   });
 
-  async function fetchTasks() {
-    const { data: dailyData, error: dailyError } = await supabase.from('tasks').select('*').eq('category', 'daily');
+
+  async function fetchmission() {
+    const { data: dailyData, error: dailyError } = await supabase
+      .from("mission")
+      .select("*")
+      .eq("category", "daily");
     if (dailyError) {
-      console.error('Error fetching daily tasks:', dailyError.message);
+      console.error("Error fetching daily tasks:", dailyError.message);
     } else {
-      dailyTasks = dailyData;
+      dailyMissions = dailyData;
     }
-
-    const { data: weeklyData, error: weeklyError } = await supabase.from('tasks').select('*').eq('category', 'weekly');
+    const { data: weeklyData, error: weeklyError } = await supabase
+      .from("mission")
+      .select("*")
+      .eq("category", "weekly");
     if (weeklyError) {
-      console.error('Error fetching weekly tasks:', weeklyError.message);
+      console.error("Error fetching weekly tasks:", weeklyError.message);
     } else {
-      weeklyTasks = weeklyData;
+      weeklyMissions = weeklyData;
     }
-
-    const { data: monthlyData, error: monthlyError } = await supabase.from('tasks').select('*').eq('category', 'monthly');
+    const { data: monthlyData, error: monthlyError } = await supabase
+      .from("mission")
+      .select("*")
+      .eq("category", "monthly");
     if (monthlyError) {
-      console.error('Error fetching monthly tasks:', monthlyError.message);
+      console.error("Error fetching monthly tasks:", monthlyError.message);
     } else {
-      monthlyTasks = monthlyData;
+      monthlyMissions= monthlyData;
     }
   }
+
+  async function fetchTaskStatuses() {
+  try {
+    const { data, error } = await supabase
+      .from("tasks")
+      .select('taskid , isCompleted')
+      .eq("taskuser", session?.user.id);
+
+    if (error) {
+      console.error("Error fetching tasks:", error.message);
+    } else {
+      // Iterate over fetched data and append to taskStatuses object
+      data.forEach(task => {
+        taskStatuses[task.taskid] = task.isCompleted;
+      });
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
+}
+    
 </script>
 
 <svelte:head>
@@ -60,11 +93,11 @@
     <div>
       <h2 class="text-2xl font-bold">Daily</h2>
       <div class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]">
-        {#each dailyTasks as task}
+        {#each dailyMissions as mission,i}
           <TaskItem
-            taskMission={task.taskMission}
-            isCompleted={task.isCompleted}
-            experiencePoints={task.experiencePoints}
+            taskMission={mission.mission}
+            isCompleted={taskStatuses[i+1]}
+            experiencePoints={mission.experiencePoints}
           />
         {/each}
       </div>
@@ -73,11 +106,11 @@
     <div>
       <h2 class="text-2xl font-bold">Weekly</h2>
       <div class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]">
-        {#each weeklyTasks as task}
+        {#each weeklyMissions as mission,i}
           <TaskItem
-            taskMission={task.taskMission}
-            isCompleted={task.isCompleted}
-            experiencePoints={task.experiencePoints}
+            taskMission={mission.mission}
+            isCompleted={taskStatuses[i+4]}
+            experiencePoints={mission.experiencePoints}
           />
         {/each}
       </div>
@@ -86,11 +119,11 @@
     <div>
       <h2 class="text-2xl font-bold">Monthly</h2>
       <div class="flex flex-col mx-2 my-2 px-2 py-6 cardGradientBackground shadowEffect rounded-[var(--card-border-radius)]">
-        {#each monthlyTasks as task}
+        {#each monthlyMissions as mission,i}
           <TaskItem
-            taskMission={task.taskMission}
-            isCompleted={task.isCompleted}
-            experiencePoints={task.experiencePoints}
+            taskMission={mission.mission}
+            isCompleted={taskStatuses[i+7]}
+            experiencePoints={mission.experiencePoints}
           />
         {/each}
       </div>
