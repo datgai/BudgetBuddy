@@ -20,7 +20,7 @@
     PointElement,
     CategoryScale
   );
-  import type { PageData, PageLoad } from "./$types";
+  import type { PageData } from "./$types";
   import CategoryTotal from "$lib/components/CategoryTotal.svelte";
   import NoRecords from "$lib/components/NoRecords.svelte";
 
