@@ -154,7 +154,7 @@
   </div>
 
   <div
-    class="flex flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-3"
+    class="flex flex-col cardGradientBackground border-b-4 border-violet-700 rounded-[30px] px-6 py-2 my-3"
   >
     <h2 class="mb-8 text-2xl font-bold">Available Balance</h2>
     {advice}
@@ -182,13 +182,13 @@
       type="date"
       name="startDate"
       bind:value={startDate}
-      class="text-black"
+      class="text-white bg-violet-900 border-2 border-gray-900"
     />
     To:<input
       type="date"
       name="endDate"
       bind:value={endDate}
-      class="text-black"
+      class="text-white bg-violet-900 border-2 border-gray-900"
     />
   </h2>
 
@@ -196,7 +196,7 @@
     <div>
       <div class="flex flex-col md:flex-row">
         <div
-          class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2 md:mx-1"
+          class="flex flex-1 flex-col cardGradientBackgroundIncome border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2 md:mx-1"
         >
           <h2 class="mb-8 text-xl font-bold">MYR {incomeTotal?.toFixed(2)}</h2>
           <h1 class="font-bold">Income</h1>
@@ -223,7 +223,7 @@
         </div>
 
         <div
-          class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2 md:mx-1"
+          class="flex flex-1 flex-col cardGradientBackgroundExpense border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2 md:mx-1"
         >
           <h2 class="mb-8 text-xl font-bold">MYR {expenseTotal?.toFixed(2)}</h2>
           <h1 class="font-bold">Expenses</h1>
