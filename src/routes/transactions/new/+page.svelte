@@ -26,7 +26,7 @@
           .toISOString()
           .slice(0, 16)}
         name="transactionDateTime"
-        class="mx-auto my-2 p-4 w-[100%] rounded-lg bg-transparent border border-[var(--color-theme-1))] appearance-none focus:outline-none focus:shadow-outline text-bg"
+        class="mx-auto my-2 p-4 w-[100%] rounded-lg bg-transparent border-2 border-zinc-900 appearance-none focus:outline-none focus:shadow-outline text-bg"
       />
     </div>
     <div>
@@ -56,7 +56,7 @@
 
     <div>
       <label for="transactionCategory">Transaction Category: </label>
-      <select name="transactionCategory" class="text-black">
+      <select name="transactionCategory" class="text-white bg-blue-800 border-2 border-zinc-900">
         {#each Object.entries(selectOptions) as [category, label]}
           <option value={category}>{label}</option>
         {/each}
@@ -75,7 +75,7 @@
         inputClasses={
           { 
             wrapper: "form-control block",
-            formatted: 'py-1.5 text-grey-700',
+            formatted: 'py-1 text-white-950 border-2 border-zinc-900 bg-gradient-to-r from-blue-800 from-10% to-indigo-500 to-100%',
             formattedPositive: 'text-green-700',
             formattedNegative: 'text-red-700'
           }
@@ -85,11 +85,12 @@
 
     <div>
       Transaction Description:
-      <input type="text" name="transactionDescription" class="text-black pb-0 pt-[17px] bg-[var(--color-theme-1)] gradientBackground" />
+      <br>
+      <input type="text" name="transactionDescription" class="py-1 text-white border-2 border-zinc-900 bg-gradient-to-r from-blue-800 from-10% to-indigo-500 to-100%" />
     </div>
     <button
       type="submit"
-      class="bg-[var(--color-theme-1)] gradientBackground font-medium rounded-lg w-full my-6 py-4 text-center"
+      class="bg-gradient-to-b from-blue-800 to-violet-900 border-2 border-zinc-900 font-medium rounded-lg w-full my-6 py-4 text-center"
     >
       Record Transaction
     </button>
