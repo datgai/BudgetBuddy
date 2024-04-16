@@ -157,7 +157,9 @@
     class="flex flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-3"
   >
     <h2 class="mb-8 text-2xl font-bold">Available Balance</h2>
-    {advice}
+    {#if advice}
+      {advice}
+    {/if}
     <h1 class="text-3xl font-bold">MYR {balance?.toFixed(2)}</h1>
     <div class="flex flex-row mx-2">
       <a href="transactions" class="flex-1 my-auto">See details</a>

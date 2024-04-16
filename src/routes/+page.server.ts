@@ -22,7 +22,7 @@ export const load: PageServerLoad = async ({ locals: { supabase, safeGetSession 
         return fail(400, error)
     }
 
-    if (transactions) {
+    if (transactions.length > 0) {
         const genAI = new GoogleGenerativeAI(PRIVATE_GOOGLE_API_KEY);
         const model = genAI.getGenerativeModel({ model: "gemini-pro" });
         const result = await model.generateContent("Given the transaction history : " + JSON.stringify(transactions) + " Rate from '1-10' & please give an advice on spending in one or two sentence");
