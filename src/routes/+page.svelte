@@ -20,7 +20,7 @@
     PointElement,
     CategoryScale
   );
-  import type { PageData, PageLoad } from "./$types";
+  import type { PageData } from "./$types";
   import CategoryTotal from "$lib/components/CategoryTotal.svelte";
   import NoRecords from "$lib/components/NoRecords.svelte";
 
@@ -154,13 +154,17 @@
   </div>
 
   <div
-    class="flex flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-3"
+    class="flex flex-col cardGradientBackground border-b-4 border-violet-700 rounded-[30px] px-6 py-2 my-3"
   >
     <h2 class="mb-3 text-3xl font-bold">Available Balance</h2>
+    {#if advice}
     <div class="mb-1 russo-one-regular">{advice}</div>
+    {/if}
     <h1 class="text-3xl font-bold">
       MYR <span class="text-5xl">{balance?.toFixed(2)}</span>
     </h1>
+
+
     <div class="flex flex-row mx-2">
       <a href="transactions" class="flex-1 my-auto">See details</a>
       <a href="/transactions/new"
@@ -203,11 +207,12 @@
     </div>
   </div>
 
+
   {#if transactions && transactions.length > 0}
     <div>
       <div class="flex flex-col md:flex-row">
         <div
-          class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2 md:mx-1"
+          class="flex flex-1 flex-col cardGradientBackgroundIncome border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2 md:mx-1"
         >
           <h2 class="mb-8 text-xl font-bold">MYR {incomeTotal?.toFixed(2)}</h2>
           <h1 class="font-bold">Income</h1>
@@ -234,7 +239,7 @@
         </div>
 
         <div
-          class="flex flex-1 flex-col cardGradientBackground border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2 md:mx-1"
+          class="flex flex-1 flex-col cardGradientBackgroundExpense border-b-4 border-blue-700 rounded-[30px] px-6 py-2 my-2 md:mx-1"
         >
           <h2 class="mb-8 text-xl font-bold">MYR {expenseTotal?.toFixed(2)}</h2>
           <h1 class="font-bold">Expenses</h1>

@@ -7,9 +7,13 @@
 	--color-background: #101D66;
 	--color-bg-1: rgb(30 64 175);
 	--color-bg-2: rgb(46, 61, 129);
+	--color-bg-3: rgb(84, 2, 167);
+	--color-bg-4: rgb(110, 6, 42);
+	--color-bg-5: rgb(9, 107, 4);
 	--color-theme-1: rgb(30 64 175);
 	--color-theme-2: rgb(49 46 129);
 	--color-theme-3: #0b2447;
+	--color-theme-4: rgb(0, 60, 255);
 	--color-text: rgb(255, 255, 255);
 	--color-text-inactive: rgba(194, 192, 192, 0.9);
 	--card-border-radius: 12px;
@@ -44,8 +48,20 @@ body {
 
 .cardGradientBackground {
 	backdrop-filter: blur(8px);
-	background: var(var(--color-theme-1));
-	background: linear-gradient(90deg, var(--color-bg-1) 0%, var(--color-bg-2) 100%)
+	background: var(var(--color-theme-4));
+	background: linear-gradient(180deg, var(--color-bg-2) 50%, var(--color-bg-3) 100%)
+}
+
+.cardGradientBackgroundIncome {
+	backdrop-filter: blur(8px);
+	background: var(var(--color-theme-4));
+	background: linear-gradient(180deg, var(--color-bg-2) 5%, var(--color-bg-3) 80%, var(--color-bg-5) 100%)
+}
+
+.cardGradientBackgroundExpense {
+	backdrop-filter: blur(8px);
+	background: var(var(--color-theme-4));
+	background: linear-gradient(180deg, var(--color-bg-2) 5%, var(--color-bg-3) 80%, var(--color-bg-4) 100%)
 }
 
 .gradientBackground {
