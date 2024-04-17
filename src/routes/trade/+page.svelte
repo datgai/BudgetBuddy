@@ -105,6 +105,6 @@
       bind:value={symbol}
     />
     </div>
-    <a href="/trade/lookup?symbol={symbol}"><button class="mt-5 w-full bg-black p-3 rounded-3xl shadowEffect bg-[--color-theme-3]">Lookup</button></a>
+    <a href="/trade/lookup?symbol={symbol}"><button class="mt-5 w-full p-3 rounded-3xl shadowEffect bg-[--color-theme-2]">Lookup</button></a>
   </div>
 </div>
