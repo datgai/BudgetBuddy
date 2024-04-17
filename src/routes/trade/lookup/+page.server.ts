@@ -54,6 +54,7 @@ export const actions: Actions = {
         }
         redirect(300, "/trade")
     },
+    
     stonksSell: async ({ request, locals: { supabase, safeGetSession } }) => {
         const { session } = await safeGetSession()
         const formData = await request.formData()
