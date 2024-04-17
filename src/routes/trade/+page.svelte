@@ -1,5 +1,7 @@
 <script lang="ts">
   import type { PageData } from "../$types";
+  import restart from "$lib/images/restart.png"
+
 
   export let data: PageData;
 
@@ -26,12 +28,17 @@
   }
 </script>
 
-<h2 style="font-size:50px">Current Portfolio</h2>
-<div>
+<h2 class="font-bold" style="font-size:40px">Current Portfolio</h2>
+<div class="text-3xl mt-10 text-center font-semibold  {(balance >= 0) ? "text-green-400":"text-[red]"}">
   Balance : {balance.toFixed(2)} USD
   <form action="?/clear" method="POST">
-    <button type="submit">Restart</button>
-  </form>
+    <div class="flex items-center justify-center mt-3">
+      <button class="text-xl text-white" type="submit">
+        Restart
+      </button>
+      <img class="w-6 pt-1 color-[white]" src="{restart}"/> 
+    </div>
+    </form>
 </div>
 
 <div class="elative overflow-x-auto shadow-md sm:rounded-lg">
@@ -39,20 +46,20 @@
     class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
   >
     <thead
-      class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+      class="text-xs text-center text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
     >
       <tr>
-        <th>DATE & TIME</th>
-        <th>SYMBOL</th>
-        <th>SHARES</th>
-        <th>BOUGHT/SOLD AT (USD)</th>
-        <th>TOTAL VALUE (USD)</th>
+        <th class="px-5">DATE & TIME</th>
+        <th class="px-5">SYMBOL</th>
+        <th class="px-5">SHARES</th>
+        <th class="px-5">BOUGHT/SOLD AT (USD)</th>
+        <th class="px-5">TOTAL VALUE (USD)</th>
       </tr>
     </thead>
     <tbody>
       {#each stonks as stonk}
         <tr
-          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+          class="text-center bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
         >
           <th
             scope="row"
@@ -86,13 +93,18 @@
       </tr>
     </tbody>
   </table>
-  <div>
-    Symbol : <input
+</div>
+<div>
+  <div class="mt-5 flex flex-col">
+    <div class="w-full text-xl mx-5">
+      Symbol : <input
       type="text"
-      class="text-black"
+      class="text-black py-1 px-3 mx-2 rounded-2xl"
       name="symbol"
+      placeholder="Symbol"
       bind:value={symbol}
     />
-    <a href="/trade/lookup?symbol={symbol}"><button>Lookup</button></a>
+    </div>
+    <a href="/trade/lookup?symbol={symbol}"><button class="mt-5 w-full bg-black p-3 rounded-3xl shadowEffect bg-[--color-theme-3]">Lookup</button></a>
   </div>
 </div>
