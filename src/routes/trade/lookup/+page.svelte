@@ -62,7 +62,7 @@
   };
 
   const chart = (node, options) => {
-    let myChart = new ApexCharts(node, options);
+    let myChart = new  ApexCharts(node, options);
     myChart.render();
 
     return {
@@ -88,9 +88,10 @@
 </svelte:head>
 
 {#if stonks["Time Series (Daily)"]}
-  <h1>{symbol}'s Price : {Number(currentStonksPrice).toFixed(2)} USD</h1>
+  <h1 class="text-2xl my-8">{symbol}'s Price :</h1>
+  <h1 class="text-center text-4xl my-8 font-bold">{Number(currentStonksPrice).toFixed(2)} USD</h1>
   <div use:chart={options}></div>
-  <div class="flex flex-row">
+  <div class="flex gap-x-5">
     <div class="m-auto">
       <form action="?/stonksBuy" method="post">
         <input type="hidden" name="symbol" bind:value={symbol} />
@@ -100,13 +101,14 @@
           bind:value={currentStonksPrice}
         />
         <input
-          class="text-black"
+          class="text-black px-2 block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           type="number"
           name="buyAmount"
           bind:value={totalStonksAmountBuy}
         />
         Costs : {totalStonksPriceBuy} USD
-        <button type="submit" class="font-bold">BUY</button>
+        <br>
+        <button type="submit" class="mt-3 w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">BUY</button>
       </form>
     </div>
 
@@ -119,13 +121,14 @@
           bind:value={currentStonksPrice}
         />
         <input
-          class="text-black"
+          class="text-black px-2 block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           type="number"
           name="sellAmount"
           bind:value={totalStonksAmountSell}
         />
         Costs : {totalStonksPriceSell} USD
-        <button type="submit" class="font-bold">SELL</button>
+        <br>
+        <button type="submit" class="mt-3 w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">SELL</button>
       </form>
     </div>
   </div>
