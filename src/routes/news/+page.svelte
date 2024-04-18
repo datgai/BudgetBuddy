@@ -6,6 +6,8 @@
 
   import NewsItem from "$lib/components/NewsItem.svelte";
 
+
+
   let news: any[] = [];
   let activeButton = "All";
   let buttons = [

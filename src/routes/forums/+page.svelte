@@ -2,7 +2,9 @@
   import MobileHeader from "$lib/components/MobileHeader.svelte";
   import ForumsItem from "$lib/components/ForumsItem.svelte";
   import { onMount } from "svelte";
-  import { fetchForums } from "./page"
+  import { supabase } from "../../main";
+
+
 
 
   /**
@@ -10,6 +12,15 @@
    */
   let forums = []; 
 
+  async function fetchForums() {
+    const { data, error } = await supabase.from('forums').select('*');
+    if (error) {
+        console.error('Error fetching forums:', error.message);
+        return [];
+    } else {
+        return data;
+    }
+}
 
   onMount(async () => {
     forums = await fetchForums();
