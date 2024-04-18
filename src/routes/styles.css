@@ -7,7 +7,7 @@
 	--color-background: #101D66;
 	--color-bg-1: rgb(30 64 175);
 	--color-bg-2: rgb(46, 61, 129);
-	--color-bg-3: rgb(84, 2, 167);
+	--color-bg-3: rgb(62, 12, 127);
 	--color-bg-4: rgb(110, 6, 42);
 	--color-bg-5: rgb(9, 107, 4);
 	--color-theme-1: rgb(30 64 175);
@@ -55,13 +55,13 @@ body {
 .cardGradientBackgroundIncome {
 	backdrop-filter: blur(8px);
 	background: var(var(--color-theme-4));
-	background: linear-gradient(180deg, var(--color-bg-2) 5%, var(--color-bg-3) 80%, var(--color-bg-5) 100%)
+	background: linear-gradient(180deg, var(--color-bg-2) 15%, var(--color-bg-3) 90%, var(--color-bg-5) 100%)
 }
 
 .cardGradientBackgroundExpense {
 	backdrop-filter: blur(8px);
 	background: var(var(--color-theme-4));
-	background: linear-gradient(180deg, var(--color-bg-2) 5%, var(--color-bg-3) 80%, var(--color-bg-4) 100%)
+	background: linear-gradient(180deg, var(--color-bg-2) 5%, var(--color-bg-3) 90%, var(--color-bg-4) 100%)
 }
 
 .gradientBackground {
