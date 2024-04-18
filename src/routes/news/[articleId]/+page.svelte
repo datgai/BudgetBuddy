@@ -3,13 +3,24 @@
   import { supabase } from "../../../main";
   import leftarrow from "$lib/images/arrow.png";
   import { page } from "$app/stores";
-  import type { Article } from "./page";
   export let data;
   let { session } = data;
   
   const articleId = $page.params.articleId;
   let article: Article;
   let isLoading = true;
+
+  interface Article {
+    id: number;
+    itemTitle: string;
+    created_at: string;
+    itemThumbnail: string;
+    itemCountry: string;
+    authorThumbnail: string;
+    authorTitle: string;
+    content:string;
+}
+
 
   async function fetchArticle() {
     const { data, error } = await supabase
