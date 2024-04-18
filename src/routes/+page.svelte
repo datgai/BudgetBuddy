@@ -158,9 +158,9 @@
   >
     <h2 class="mb-3 text-3xl font-bold">Available Balance</h2>
     {#if advice}
-    <div class="mb-1 russo-one-regular">{advice}</div>
+    <div class="mb-3 russo-one-regular">{advice}</div>
     {/if}
-    <h1 class="text-3xl font-bold">
+    <h1 class="text-4xl font-bold">
       MYR <span class="text-5xl">{balance?.toFixed(2)}</span>
     </h1>
 

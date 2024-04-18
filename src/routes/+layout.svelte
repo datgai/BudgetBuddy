@@ -38,7 +38,7 @@
 
 <div class="app">
   <Navbar {supabase} {profile} />
-  <main class="md:px-6 p-4 bg-gradient-to-b from-indigo-950 from-100% via-indigo-900 from-20% to-violet-950 from-100%">
+  <main class="md:px-6 p-14 bg-gradient-to-b from-indigo-950 from-100% via-indigo-900 from-20% to-violet-950 from-100%">
     {#if showMobileHeader}
     <MobileHeader {supabase} {profile} />
     {/if}
