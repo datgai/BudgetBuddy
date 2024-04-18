@@ -38,14 +38,14 @@
     >
       MYR {amount}
     </div>
-    <div class="m-auto">
+    <div class="m-auto flex">
       <a href="transactions/edit/?Id={id}"
         ><button
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-edit m-auto"
-            width="40"
-            height="40"
+            width="30"
+            height="30"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="#00abfb"
@@ -74,8 +74,8 @@
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-edit"
-            width="40"
-            height="40"
+            width="30"
+            height="30"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="#ff2825"
