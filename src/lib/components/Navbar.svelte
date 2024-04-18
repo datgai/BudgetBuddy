@@ -103,6 +103,29 @@
       </svg>
       <p class="invisible md:visible">Resources</p></a
     >
+
+    <a
+    href="/trade"
+    class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6 md:hidden m-auto {$page.url.pathname == '/trade'
+        ? 'glowEffect'
+        : ''}"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"/>
+    </svg>
+    <p class="invisible md:visible">Trade</p></a
+  >
+  
     <a
       href="../tasks"
       class="flex-1 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
