@@ -15,7 +15,7 @@
       <img
         src={itemThumbnail}
         alt="article Thumbnail"
-        class="object-cover rounded-t-[var(--card-border-radius)] max-h-[200px] sm:rounded-tr-none sm:rounded-l-[var(--card-border-radius)]"
+        class="object-contain h-50 w-96"
       />
     {/if}
 
