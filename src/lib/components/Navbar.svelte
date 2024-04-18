@@ -18,7 +18,7 @@
   >
     <a
       href="/"
-      class="flex-1 w-10 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
+      class="flex-1 w-10 md:flex-auto pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@
 
     <a
       href="../news"
-      class="flex-1 w-10 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
+      class="flex-1 w-10 md:flex-auto pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@
     >
     <a
       href="../forums"
-      class="flex-1 w-10 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
+      class="flex-1 w-10 md:flex-auto pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
       <svg
         class="opacity-75 w-6 h-6 md:hidden m-auto {$page.url.pathname ==
@@ -84,7 +84,7 @@
     >
     <a
       href="../resources"
-      class="flex-1 w-10 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
+      class="flex-1 w-10 md:flex-auto pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -106,7 +106,7 @@
 
     <a
     href="/trade"
-    class="flex-1 w-10 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
+    class="flex-1 w-10 md:flex-auto pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +128,7 @@
   
     <a
       href="../tasks"
-      class="flex-1 w-10 md:flex-none pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
+      class="flex-1 w-10 md:flex-auto pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
