@@ -1,12 +1,8 @@
 
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
-  import {filterNews, fetchRandomNews} from "./page";
-  import MobileHeader from "$lib/components/MobileHeader.svelte";
-
   import NewsItem from "$lib/components/NewsItem.svelte";
-
-
+  import { supabase } from "../../main";
 
   let news: any[] = [];
   let activeButton = "All";
@@ -47,6 +43,41 @@
       randomNewsThumbnail = randomNews.itemThumbnail; 
     }
   }
+  async function fetchNews() {
+    const { data, error } = await supabase.from('news').select('*');
+    if (error) {
+        console.error('Error fetching news:', error.message);
+        return [];
+    } else {
+        return data;
+    }
+}
+
+async function filterNews(type: string) {
+    if (type === 'All') {
+        return await fetchNews(); 
+    } else {
+        const { data, error } = await supabase.from('news').select('*').eq('type', type);
+        if (error) {
+            console.error('Error fetching news:', error.message);
+            return [];
+        } else {
+            return data;
+        }
+    }
+}
+
+async function fetchRandomNews() {
+    const { data: allNews, error } = await supabase.from('news').select('*');
+    if (error) {
+        console.error('Error fetching news:', error.message);
+        return null;
+    } else {
+        const randomIndex = Math.floor(Math.random() * allNews.length);
+        const randomNews = allNews[randomIndex];
+        return randomNews || null;
+    }
+}
 </script>
 
 <svelte:head>

@@ -40,7 +40,7 @@
   <Navbar {supabase} {profile} />
 
   <main
-    class="md:px-6 p-4 bg-gradient-to-b from-indigo-950 from-100% via-indigo-900 from-20% to-violet-950 from-100% min-h-screen"
+    class="md:px-6 p-4 bg-gradient-to-b from-indigo-950 from-100% via-indigo-900 from-20% to-violet-950 from-100%"
   >
 
     {#if showMobileHeader}
