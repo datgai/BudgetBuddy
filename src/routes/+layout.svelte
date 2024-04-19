@@ -7,7 +7,7 @@
   import { onMount } from "svelte";
   import { page } from "$app/stores";
   import MobileHeader from "$lib/components/MobileHeader.svelte";
-  import { getContext } from 'svelte';
+  import { getContext } from "svelte";
 
   let showMobileHeader: boolean;
 
@@ -38,9 +38,13 @@
 
 <div class="app">
   <Navbar {supabase} {profile} />
-  <main class="md:px-6 p-14 bg-gradient-to-b from-indigo-950 from-100% via-indigo-900 from-20% to-violet-950 from-100%">
+
+  <main
+    class="md:px-6 p-4 bg-gradient-to-b from-indigo-950 from-100% via-indigo-900 from-20% to-violet-950 from-100% min-h-screen"
+  >
+
     {#if showMobileHeader}
-    <MobileHeader {supabase} {profile} />
+      <MobileHeader {supabase} {profile} />
     {/if}
     <slot />
   </main>
