@@ -44,6 +44,7 @@
 * [Svelte](https://svelte.dev/)
 * [Tailwind](https://tailwindcss.com/)
 * [TypeScript](https://www.typescriptlang.org/)
+* [Supabase](https://supabase.com/)
 
 ## Installation
 First, clone this repository.
@@ -51,10 +52,11 @@ First, clone this repository.
 1. Navigate into the folder.
 2. Run `npm install` to download the dependencies.
 4. Run `npm run dev`.
+5. Include the API keys into an '.env' file following '.env.example', and rerun `npm run dev`.
    
 ## Acknowledgments
 YouthVenture members:
 * [Alex](https://github.com/datgai)
 * [Lim Jia Xuan](https://github.com/jiaxuan10)
-* [Hoh Jun Yi]()
-* [Lee Yan Sheng]()
+* [Hoh Jun Yi](https://github.com/Junyi930)
+* [Lee Yan Sheng](https://github.com/yansheng03)
