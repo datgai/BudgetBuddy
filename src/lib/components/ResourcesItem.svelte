@@ -6,7 +6,7 @@
   export let views: number;
   export let likes: number;
   export let comments: number;
-  export let author:string;
+  export let author: string;
 </script>
 
 <div class="rounded-[var(--card-border-radius)] shadowEffect">
@@ -33,7 +33,7 @@
         <div class="flex py-2 items-center text-sm mb-[15px] overflow-auto">
           {#each itemTags as tag}
             <div
-              class="bg-[gray] shadow-[rgba(0,0,0,0.15)_1.95px_1.95px_2.6px] px-2.5 py-[5px] m-1 rounded-[40px]"
+              class="border-[3px] shadow-[rgba(0,0,0,0.15)_1.95px_1.95px_2.6px] px-2.5 py-[5px] m-1 rounded-[40px]"
             >
               {tag}
             </div>

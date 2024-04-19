@@ -77,7 +77,9 @@
   <div class=" my-2 mx-auto">
     <p class="font-bold text-xl text-[var(--color-text)] truncate text-center">
       {profile?.username}
-      {profile?.phone_number}
+    </p>
+    <p class="text-center text-xl">
+      +6{profile?.phone_number}
     </p>
     <p class="truncate text-xl text-[var(--color-text-inactive)] text-center">
       {session?.user.email}

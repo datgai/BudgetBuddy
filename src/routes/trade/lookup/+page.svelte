@@ -62,7 +62,7 @@
   };
 
   const chart = (node, options) => {
-    let myChart = new  ApexCharts(node, options);
+    let myChart = new ApexCharts(node, options);
     myChart.render();
 
     return {
@@ -89,7 +89,9 @@
 
 {#if stonks["Time Series (Daily)"]}
   <h1 class="text-2xl my-8">{symbol}'s Price :</h1>
-  <h1 class="text-center text-4xl my-8 font-bold">{Number(currentStonksPrice).toFixed(2)} USD</h1>
+  <h1 class="text-center text-4xl my-8 font-bold">
+    {Number(currentStonksPrice).toFixed(2)} USD
+  </h1>
   <div use:chart={options}></div>
   <div class="flex gap-x-5">
     <div class="m-auto">
@@ -107,8 +109,12 @@
           bind:value={totalStonksAmountBuy}
         />
         Costs : {totalStonksPriceBuy} USD
-        <br>
-        <button type="submit" class="mt-3 w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">BUY</button>
+        <br />
+        <button
+          type="submit"
+          class="mt-5 w-full p-3 rounded-3xl shadowEffect bg-[--color-theme-2] bg-gradient-to-b from-indigo-800 from-100% via-indigo-900 from-20% to-violet-950 from-100%"
+          >BUY</button
+        >
       </form>
     </div>
 
@@ -127,8 +133,12 @@
           bind:value={totalStonksAmountSell}
         />
         Costs : {totalStonksPriceSell} USD
-        <br>
-        <button type="submit" class="mt-3 w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">SELL</button>
+        <br />
+        <button
+          type="submit"
+          class="mt-5 w-full p-3 rounded-3xl shadowEffect bg-[--color-theme-2] bg-gradient-to-b from-indigo-800 from-100% via-indigo-900 from-20% to-violet-950 from-100%"
+          >SELL</button
+        >
       </form>
     </div>
   </div>
