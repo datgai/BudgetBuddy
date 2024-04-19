@@ -201,7 +201,7 @@
   </div>
 
   <!-- Messages container -->
-  <div class="flex flex-col h-[77vh] bg-gray-100 justify-between">
+  <div class="flex flex-col h-[80vh] bg-gray-100 justify-between md:h-[87vh] pb-10">
     <div class="p-4 space-y-4 bg-gray-100 overflow-auto messages-container">
       {#each messages as message}
         {#await Promise.all([getUserName(message.user_id), getUserProfile(message.user_id)]) then [username, userProfile]}
