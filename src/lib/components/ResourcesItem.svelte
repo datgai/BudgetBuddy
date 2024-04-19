@@ -15,7 +15,7 @@
       <img
         src={itemThumbnail}
         alt="article Thumbnail"
-        class="object-contain h-50 w-96"
+        class="object-contain h-50 w-96 rounded-t md:rounded-l md:rounded-tr-[0px]"
       />
     {/if}
 
