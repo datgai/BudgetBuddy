@@ -25,7 +25,7 @@
 
 <header>
   <div class="flex mt-4 py-2">
-    <a href="/" class="">
+    <a href="/home" class="">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

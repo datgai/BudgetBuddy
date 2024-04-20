@@ -10,14 +10,14 @@
   class="py-1 flex fixed bottom-[-4px] md:relative md:top-0 bg-[#000F1F] text-white w-full h-50 md:flex md:justify-between md:items-center z-10 rounded-t-xl md:rounded-xl md:rounded-t-none"
 >
   <div class="px-4 py-5 flex justify-between invisible md:visible">
-    <a href="/" class="text-white font-bold invisible">Brand</a>
+    <a href="/home" class="text-white font-bold invisible">Brand</a>
   </div>
 
   <div
     class={`flex fixed md:flex items-center md:flex-row  md:pb-0 md:static bottom-0 w-full md:filter-none`}
   >
     <a
-      href="/"
+      href="/home"
       class="flex-1 w-10 md:flex-auto pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
       <svg
@@ -26,7 +26,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-6 h-6 md:hidden m-auto {$page.url.pathname == '/'
+        class="w-6 h-6 md:hidden m-auto {$page.url.pathname == '/home'
           ? 'glowEffect'
           : ''}"
       >
@@ -105,27 +105,28 @@
     >
 
     <a
-    href="/trade"
-    class="flex-1 w-10 md:flex-auto pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
-      class="w-6 h-6 md:hidden m-auto {$page.url.pathname == '/trade'
-        ? 'glowEffect'
-        : ''}"
+      href="/trade"
+      class="flex-1 w-10 md:flex-auto pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
     >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"/>
-    </svg>
-    <p class="invisible md:visible">Trade</p></a
-  >
-  
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 md:hidden m-auto {$page.url.pathname == '/trade'
+          ? 'glowEffect'
+          : ''}"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"
+        />
+      </svg>
+      <p class="invisible md:visible">Trade</p></a
+    >
+
     <a
       href="../tasks"
       class="flex-1 w-10 md:flex-auto pt-4 md:py-2 px-4 text-sm md:border-0 text-[color:var(--color-text-inactive)] block text-center"
