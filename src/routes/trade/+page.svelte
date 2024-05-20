@@ -37,7 +37,7 @@
   <form action="?/clear" method="POST">
     <div class="flex items-center justify-center mt-3">
       <button class="text-xl text-white" type="submit"> Restart </button>
-      <img class="w-6 pt-1 color-[white]" src={restart} />
+      <img class="w-6 pt-1 color-[white]" src={restart} alt="Restart" />
     </div>
   </form>
 </div>

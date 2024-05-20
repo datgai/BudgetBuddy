@@ -1,7 +1,6 @@
 <script>
   // @ts-nocheck
   export let id;
-  export let icon;
   export let category;
   export let title;
   export let date;

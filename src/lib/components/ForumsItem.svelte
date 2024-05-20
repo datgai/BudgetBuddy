@@ -3,7 +3,6 @@
   export let itemThumbnail: string | undefined = undefined;
   export let itemTitle: string;
   export let itemDescription: string;
-  export let itemId:number;
 </script>
 
 <div
@@ -46,26 +45,27 @@
               src="https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg"
               alt=""
             />
-            <a
+            <div
               class="flex items-center justify-center w-10 h-10 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800"
-              >+99</a
             >
+              +99
+            </div>
           </div>
         </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-10 h-10"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m8.25 4.5 7.5 7.5-7.5 7.5"
-            />
-          </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-10 h-10"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          />
+        </svg>
       </div>
     </div>
   </div>
